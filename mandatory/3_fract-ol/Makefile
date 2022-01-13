@@ -2,13 +2,13 @@ NAME = fractol
 
 CC = clang
 
-MLX = $(MLX_DIR)/libmlx_Linux.a
-MLX_DIR = minilibx-linux
+MLX = $(MLX_DIR)/libmlx.a
+MLX_DIR = minilibx
 
 HEADER = -I./includes -I./$(MLX_DIR)
 CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
-LFLAGS = -lbsd -lm -lX11 -lXext -L ./$(MLX_DIR) -lmlx
-
+#LFLAGS = -lbsd -lm -lX11 -lXext -L ./$(MLX_DIR) -lmlx
+LFLAGS = -L ./$(MLX_DIR) -lmlx -framework OpenGL -framework AppKit
 SRCS = src/event.c \
 		src/event2.c \
 		src/fractol.c \

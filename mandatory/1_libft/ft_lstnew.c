@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/25 15:29:22 by adrossig          #+#    #+#             */
-/*   Updated: 2021/10/28 12:06:23 by adrossig         ###   ########.fr       */
+/*   Created: 2022/01/10 15:08:39 by arossign          #+#    #+#             */
+/*   Updated: 2022/01/13 12:56:08 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "./libft.h"
 
 t_list	*ft_lstnew(void *content)
 {

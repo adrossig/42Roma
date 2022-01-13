@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   event2.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/12 13:12:10 by arossign          #+#    #+#             */
+/*   Updated: 2022/01/12 13:12:11 by arossign         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/fractol.h"
 
 void	simple_zoom1(t_fractol *fractol)
@@ -5,10 +17,10 @@ void	simple_zoom1(t_fractol *fractol)
 	if (fractol->start_x < 0 && fractol->start_y < 0 \
 		&& fractol->end_x > 0 && fractol->end_y > 0)
 	{
-		fractol->start_x = fractol->start_x + 0.015;
-		fractol->start_y = fractol->start_y + 0.015;
-		fractol->end_x = fractol->end_x - 0.015;
-		fractol->end_y = fractol->end_y - 0.015;
+		fractol->start_x = fractol->start_x + 0.055;
+		fractol->start_y = fractol->start_y + 0.055;
+		fractol->end_x = fractol->end_x - 0.055;
+		fractol->end_y = fractol->end_y - 0.055;
 	}
 }
 

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   event.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/12 13:12:02 by arossign          #+#    #+#             */
+/*   Updated: 2022/01/12 13:12:03 by arossign         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/fractol.h"
 
 int	mouse_press(int button, int x, int y, t_fractol *fractol)
@@ -12,12 +24,12 @@ int	mouse_press(int button, int x, int y, t_fractol *fractol)
 
 int	keypress(int keycode, t_fractol *fractol)
 {
-	if (keycode == KEY_ESC)
+	if (keycode == KEY_ESCAPE)
 	{
 		destroy_exit(fractol);
 		exit(0);
 	}
-	else if (keycode == KEY_SLASH)
+	else if (keycode == KEY_PAD_DIVIDE)
 	{
 		if (fractol->max >= 10)
 			fractol->max -= 10;
@@ -61,7 +73,7 @@ int	keypress3(int keycode, t_fractol *fractol)
 		fractol->end_y = fractol->end_y + 0.037;
 		check_arg(fractol);
 	}
-	else if (keycode == KEY_ASTERISK)
+	else if (keycode == KEY_PAD_MULTIPLY)
 	{
 		fractol->max += 10;
 		check_arg(fractol);
@@ -73,19 +85,19 @@ int	keypress3(int keycode, t_fractol *fractol)
 
 void	keypress4(int keycode, t_fractol *fractol)
 {
-	if (keycode == KEY_1)
+	if (keycode == KEY_ONE)
 	{
 		fractol->name = "Julia";
 		init(fractol, fractol->name);
 		check_arg(fractol);
 	}
-	else if (keycode == KEY_2)
+	else if (keycode == KEY_TWO)
 	{
 		fractol->name = "Mandelbrot";
 		init(fractol, fractol->name);
 		check_arg(fractol);
 	}
-	else if (keycode == KEY_3)
+	else if (keycode == KEY_THREE)
 	{
 		fractol->name = "Burningship";
 		init(fractol, fractol->name);

@@ -13,7 +13,7 @@
 NAME = libft.a
 
 CC = gcc
-FLAGS = -Wall -Werror -Wextra -W -pedantic -g -fsanitize=address
+FLAGS = -Wall -Werror -Wextra -W -pedantic -g -fsanitize=address -o3
 INC = libft.h
 
 T_BLK = \033[5m

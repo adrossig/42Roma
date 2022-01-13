@@ -38,7 +38,7 @@ CONV := ft_atoi.c ft_itoa.c ft_bintodec.c ft_bintohexa.c ft_bintooctal.c \
 		ft_dectobin.c ft_dectohexa.c ft_dectooctal.c ft_hexatooctal.c \
 		ft_octaltobin.c ft_octaltodec.c ft_tohexa.c ft_itoa_base.c \
 		ft_itoa_uimax.c ft_uitoa.c ft_lltoa.c ft_lltoa_base.c \
-		ft_atoill.c ft_atoi_base.c ft_atouni.c ft_ulltoa.c \
+		ft_atoill.c ft_atoi_base.c \
 		ft_base.c
 
 CRYPT := ft_crypt_str.c ft_uncrypt_str.c
