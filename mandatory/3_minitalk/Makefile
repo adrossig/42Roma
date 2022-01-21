@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: adrienrossignol <adrienrossignol@studen    +#+  +:+       +#+         #
+#    By: arossign <arossign@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/05/28 19:04:05 by adrossig          #+#    #+#              #
-#    Updated: 2022/01/21 14:19:01 by adrienrossi      ###   ########.fr        #
+#    Created: 2022/01/21 15:42:14 by arossign          #+#    #+#              #
+#    Updated: 2022/01/21 15:42:16 by arossign         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,7 @@ $(BCLIENT): $(BCLIENT_OBJ) $(BSHARED_OBJ)
 	@$(CC) $(BCLIENT_OBJ) $(BSHARED_OBJ) $(CFLAGS) -o $(BCLIENT)
 
 $(BSERVER): $(BSERVER_OBJ) $(BSHARED_OBJ)
-	@$(CC) $(BSERVER_OBJ) $(BSHARED_OBJ) $(CFLAGS) -o $(BSERVER) 
+	@$(CC) $(BSERVER_OBJ) $(BSHARED_OBJ) $(CFLAGS) -o $(BSERVER)
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -o $@ -c $<

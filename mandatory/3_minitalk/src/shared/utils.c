@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrienrossignol <adrienrossignol@studen    +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/29 10:18:54 by adrossig          #+#    #+#             */
-/*   Updated: 2022/01/21 15:39:20 by adrienrossi      ###   ########.fr       */
+/*   Created: 2022/01/21 15:42:27 by arossign          #+#    #+#             */
+/*   Updated: 2022/01/21 15:42:30 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

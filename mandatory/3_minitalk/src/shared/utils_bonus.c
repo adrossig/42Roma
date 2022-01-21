@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrienrossignol <adrienrossignol@studen    +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/21 12:59:56 by adrienrossi       #+#    #+#             */
-/*   Updated: 2022/01/21 15:39:26 by adrienrossi      ###   ########.fr       */
+/*   Created: 2022/01/21 15:42:34 by arossign          #+#    #+#             */
+/*   Updated: 2022/01/21 15:42:36 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
