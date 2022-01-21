@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 10:45:44 by adrossig          #+#    #+#             */
-/*   Updated: 2021/05/26 16:44:47 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/01/20 15:03:15 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 char	*ft_itoa_base_custom(u_int64_t nbr, uintmax_t base)
 {
 	static char	hex[16] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-						'A', 'B', 'C', 'D', 'E', 'F'};
+		'A', 'B', 'C', 'D', 'E', 'F'};
 	char		*str;
 	uintmax_t	converted_nbr[64];
 	uintmax_t	n;

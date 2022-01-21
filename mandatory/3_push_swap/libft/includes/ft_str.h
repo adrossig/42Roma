@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_str.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 10:43:59 by adrossig          #+#    #+#             */
-/*   Updated: 2020/09/15 10:56:49 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/01/20 15:03:36 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char			*ft_strndup(const char *s, size_t n);
 char			*ft_strnjoin(char *s1, char *s2, int n);
 char			*ft_strcat(char *dest, const char *src);
 char			*ft_strcpy(char *dest, const char *src);
-char			*ft_strmap(const char *s, char(*f)(char));
+char			*ft_strmap(const char *s, char (*f)(char));
 char			*ft_strjoin(const char *s1, const char *s2);
 char			*ft_strtrim(const char *s1, const char *set);
 char			*ft_strstr(const char *str, const char *to_find);
