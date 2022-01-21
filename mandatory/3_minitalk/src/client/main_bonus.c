@@ -1,90 +1,67 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: adrienrossignol <adrienrossignol@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 17:37:32 by adrossig          #+#    #+#             */
-/*   Updated: 2021/05/29 11:06:46 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/01/21 15:15:53 by adrienrossi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_minitalk.h"
 
-void	connection_terminate(pid_t server_pid)
+void	shift(char c, int pid)
+{
+	int	bit;
+
+	bit = 0;
+	while (bit < 8)
+	{
+		if (c & 0x80)
+			kill(pid, SIGUSR2);
+		else
+			kill(pid, SIGUSR1);
+		c <<= 1;
+		bit++;
+		usleep(500);
+	}
+}
+
+void	_send(char *message, int pid)
 {
 	int	i;
 
-	i = 8;
-	while (i--)
+	i = 0;
+	while (message[i])
 	{
-		usleep(50);
-		kill(server_pid, SIGUSR2);
+		shift(message[i], pid);
+		i++;
 	}
-	exit(0);
+	shift('\0', pid);
 }
 
-void	send_bit(char *s, pid_t pid)
+int	main(int ac, char **av)
 {
-	static int				i = 8;
-	static unsigned char	c;
-	static char				*str;
-	static pid_t			server_pid;
+	int	pid;
 
-	if (s)
+	if (ac > 1 && ac <= 3)
 	{
-		str = s;
-		server_pid = pid;
-		c = *str;
+		pid = ft_atoi(av[1]);
+		if (pid == 0 || pid < 0)
+		{
+			ft_putstr(PID_ERR);
+			exit(EXIT_FAILURE);
+		}
+		else
+		{
+			ft_putendl(SNDING_MSG);
+			_send(av[2], pid);
+			usleep(100);
+			ft_putendl(SENT_SUCCESS);
+			exit(EXIT_SUCCESS);
+		}
 	}
-	if (!i)
-	{
-		i = 8;
-		c = *(++str);
-		if (!c)
-			connection_terminate(server_pid);
-	}
-	if (c && c >> --i & 0x01)
-		kill(server_pid, SIGUSR1);
-	else if (c)
-		kill(server_pid, SIGUSR2);
-}
-
-void	sig_handler(int sig, siginfo_t *siginfo, void *unused)
-{
-	static int	recv_bytes = 0;
-
-	(void)siginfo;
-	(void)unused;
-	if (sig == SIGUSR1)
-	{
-		ft_putstr("\rReceive Acks : ");
-		ft_putnbr(++recv_bytes);
-	}
-	send_bit(0, 0);
-}
-
-int	main(int argc, char **argv)
-{
-	struct sigaction	e;
-
-	if (argc != 3 || !(100 <= ft_atoi(argv[1]) && ft_atoi(argv[1]) <= 99998))
-	{
-		ft_putstr("Usage : ./client [99 < Server PID < 99999] [Message]");
-		return (1);
-	}
-	if (!ft_strlen(argv[2]))
-		exit(0);
-	e.sa_flags = SA_SIGINFO;
-	e.sa_sigaction = sig_handler;
-	sigaction(SIGUSR1, &e, 0);
-	sigaction(SIGUSR2, &e, 0);
-	ft_putstr("Send Bytes   : ");
-	ft_putnbr(ft_strlen(argv[2]));
-	ft_putchar('\n');
-	send_bit(argv[2], ft_atoi(argv[1]));
-	while (1)
-		pause();
-	return (0);
+	ft_putstr(ERR_ARG);
 }

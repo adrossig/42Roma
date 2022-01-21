@@ -6,52 +6,67 @@
 /*   By: adrienrossignol <adrienrossignol@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 17:08:52 by adrossig          #+#    #+#             */
-/*   Updated: 2022/01/21 14:16:54 by adrienrossi      ###   ########.fr       */
+/*   Updated: 2022/01/21 15:16:36 by adrienrossi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_minitalk.h"
 
-void	my_handler(int sig, siginfo_t *siginfo, void *unused)
+static void	reset(int *curr_pid, int *cli_pid, int *i, char *byte)
 {
-	static unsigned char c = 0x00;
-	static int	cnt = 0;
-	static pid_t	client_pid;
+	*cli_pid = *curr_pid;
+	*byte = 0;
+	*i = 0;
+}
 
-	(void)unused;
-	if (!client_pid)
-		client_pid = siginfo->si_pid;
-	c |= (sig == SIGUSR1);
-	if (++cnt == 8)
+void	unshift_that_char(int num, siginfo_t *inf, void *p)
+{
+	static int	i;
+	static char	byte;
+	static int	curr_pid;
+	static int	cli_pid;
+
+	(void)p;
+	if (!cli_pid)
+		cli_pid = inf->si_pid;
+	curr_pid = inf->si_pid;
+	if (curr_pid != cli_pid)
+		reset(&curr_pid, &cli_pid, &i, &byte);
+	if (num == SIGUSR2)
 	{
-		cnt = 0;
-		if (c == 0x00)
-		{
-			client_pid = 0;
-			return ;
-		}
-		ft_putchar(c);
-		c = 0x00;
-		kill(client_pid, SIGUSR1);
+		(byte |= (0x80 >> i));
+		i++;
 	}
 	else
+		i++;
+	if (i == 8)
 	{
-		c <<= 1;
-		kill(client_pid, SIGUSR2);
+		write(1, &byte, 1);
+		i = 0;
+		byte = 0;
 	}
 }
 
-int	main(void)
+int	main(int ac, char **av)
 {
-	struct sigaction e;
-	write(1, "Server started!\nPID: ", 21);
-	ft_putnbr(getpid());
-	write(1, "\n", 1);
-	e.sa_flags = SA_SIGINFO;
-	e.sa_sigaction = my_handler;
-	sigaction(SIGUSR1, &e, 0);
-	sigaction(SIGUSR2, &e, 0);
-	while (1)
-		pause();
-	return (0);
+	int					pid;
+	struct sigaction	ret;
+
+	(void)av;
+	pid = getpid();
+	ret.sa_sigaction = unshift_that_char;
+	ret.sa_flags = SA_SIGINFO;
+	if (ac == 1)
+	{
+		ft_putstr("PID: ");
+		ft_putnbr(pid);
+		ft_putchar('\n');
+		while (1)
+		{
+			sigaction(SIGUSR1, &ret, 0);
+			sigaction(SIGUSR2, &ret, 0);
+			pause();
+		}
+	}
+	exit(EXIT_FAILURE);
 }
