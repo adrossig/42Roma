@@ -3,62 +3,87 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: adrienrossignol <adrienrossignol@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 17:37:32 by adrossig          #+#    #+#             */
-/*   Updated: 2021/05/29 11:06:46 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/01/21 14:19:29 by adrienrossi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_minitalk.h"
 
-void	decimal_conversion(char ascii, int power, int pid)
-{
-	if (power > 0)
-		decimal_conversion(ascii / 2, power - 1, pid);
-	if ((ascii % 2) == 1)
-	{
-		if (kill(pid, SIGUSR1) == -1)
-			error("Error signal!\n");
-	}
-	else
-	{
-		if (kill(pid, SIGUSR2) == -1)
-			error("Error signal!\n");
-	}
-	usleep(100);
-}
-
-int	send_message(int pid, char *msg)
+void	connection_terminate(pid_t server_pid)
 {
 	int	i;
 
-	i = 0;
-	while (msg[i] != '\0')
+	i = 8;
+	while (i--)
 	{
-		decimal_conversion(msg[i], 7, pid);
-		i++;
+		usleep(50);
+		kill(server_pid, SIGUSR2);
 	}
-	return (0);
+	exit(0);
 }
 
-void	my_handler(int signum)
+void	send_bit(char *s, pid_t pid)
 {
-	if (signum == SIGUSR1)
+	static int				i = 8;
+	static unsigned char	c;
+	static char				*str;
+	static pid_t			server_pid;
+
+	if (s)
 	{
-		ft_putstr("Received SIGUSR1!\n");
+		str = s;
+		server_pid = pid;
+		c = *str;
 	}
+	if (!i)
+	{
+		i = 8;
+		c = *(++str);
+		if (!c)
+			connection_terminate(server_pid);
+	}
+	if (c && c >> --i & 0x01)
+		kill(server_pid, SIGUSR1);
+	else if (c)
+		kill(server_pid, SIGUSR2);
 }
 
-int	main(int ac, char **av)
+void	sig_handler(int sig, siginfo_t *siginfo, void *unused)
 {
-	signal(SIGUSR2, my_handler);
-	if (ac != 3)
+	static int	recv_bytes = 0;
+
+	(void)siginfo;
+	(void)unused;
+	if (sig == SIGUSR1)
 	{
-		ft_putstr("Usage : ./client [PID] [MESSAGE]\n");
-		return (0);
+		ft_putstr("\rReceive Acks : ");
+		ft_putnbr(++recv_bytes);
 	}
-	send_message(atoi(av[1]), av[2]);
+	send_bit(0, 0);
+}
+
+int	main(int argc, char **argv)
+{
+	struct sigaction	e;
+
+	if (argc != 3 || !(100 <= ft_atoi(argv[1]) && ft_atoi(argv[1]) <= 99998))
+	{
+		ft_putstr("Usage : ./client [99 < Server PID < 99999] [Message]");
+		return (1);
+	}
+	if (!ft_strlen(argv[2]))
+		exit(0);
+	e.sa_flags = SA_SIGINFO;
+	e.sa_sigaction = sig_handler;
+	sigaction(SIGUSR1, &e, 0);
+	sigaction(SIGUSR2, &e, 0);
+	ft_putstr("Send Bytes   : ");
+	ft_putnbr(ft_strlen(argv[2]));
+	ft_putchar('\n');
+	send_bit(argv[2], ft_atoi(argv[1]));
 	while (1)
 		pause();
 	return (0);

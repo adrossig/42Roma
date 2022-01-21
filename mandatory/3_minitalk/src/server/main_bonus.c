@@ -1,32 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adrienrossignol <adrienrossignol@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 17:08:52 by adrossig          #+#    #+#             */
-/*   Updated: 2022/01/21 13:01:12 by adrienrossi      ###   ########.fr       */
+/*   Updated: 2022/01/21 14:16:54 by adrienrossi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_minitalk.h"
-/*
-void	my_handler(int signum)
-{
-	static int	ascii = 0;
-	static int	power = 0;
-
-	if (signum == SIGUSR1)
-		ascii += 1 << (7 - power);
-	power += 1;
-	if (power == 8)
-	{
-		write(1, &ascii, 1);
-		power = 0;
-		ascii = 0;
-	}
-}*/
 
 void	my_handler(int sig, siginfo_t *siginfo, void *unused)
 {

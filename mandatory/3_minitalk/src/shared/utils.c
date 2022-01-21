@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: adrienrossignol <adrienrossignol@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 10:18:54 by adrossig          #+#    #+#             */
-/*   Updated: 2021/05/29 11:05:51 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/01/21 14:14:16 by adrienrossi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,10 @@ size_t	ft_strlen(const char *str)
 	while (*(str + i))
 		++i;
 	return (i);
+}
+
+void	error(char *str)
+{
+	ft_putstr(str);
+	exit(0);
 }
