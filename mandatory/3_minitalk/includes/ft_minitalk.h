@@ -6,7 +6,7 @@
 /*   By: adrienrossignol <adrienrossignol@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 10:18:17 by adrossig          #+#    #+#             */
-/*   Updated: 2022/01/21 15:34:19 by adrienrossi      ###   ########.fr       */
+/*   Updated: 2022/01/21 15:39:51 by adrienrossi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_putstr(char *str);
 void	ft_putnbr(int nb);
 void	error(char *str);
 size_t	ft_strlen(const char *str);
-int     ft_atoi(const char *str);
+int		ft_atoi(const char *str);
 void	ft_putendl(char *s);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: adrienrossignol <adrienrossignol@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 12:59:56 by adrienrossi       #+#    #+#             */
-/*   Updated: 2022/01/21 15:16:22 by adrienrossi      ###   ########.fr       */
+/*   Updated: 2022/01/21 15:39:26 by adrienrossi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,3 @@ void	ft_putendl(char *s)
 	ft_putstr(s);
 	ft_putchar('\n');
 }
-
