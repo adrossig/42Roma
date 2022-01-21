@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+         #
+#    By: adrienrossignol <adrienrossignol@studen    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/28 19:04:05 by adrossig          #+#    #+#              #
-#    Updated: 2021/05/29 11:04:52 by adrossig         ###   ########.fr        #
+#    Updated: 2022/01/21 13:01:04 by adrienrossi      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ INC = ./includes
 
 CLIENT_FILES = main.c
 SERVER_FILES = main.c
-SHARED_FILES = utils.c
+SHARED_FILES = utils.c utils_bonus.c
 
 CLIENT_SRC = $(addprefix $(SRC)client/, $(CLIENT_FILES))
 SERVER_SRC = $(addprefix $(SRC)server/, $(SERVER_FILES))

@@ -40,8 +40,12 @@ void	ft_putnbr(int n)
 	ft_putchar((n % 10) + '0');
 }
 
-void	error(char *str)
+size_t	ft_strlen(const char *str)
 {
-	ft_putstr(str);
-	exit(0);
+	unsigned int	i;
+
+	i = 0;
+	while (*(str + i))
+		++i;
+	return (i);
 }

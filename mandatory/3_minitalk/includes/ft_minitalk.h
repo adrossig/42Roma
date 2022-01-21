@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_minitalk.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: adrienrossignol <adrienrossignol@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 10:18:17 by adrossig          #+#    #+#             */
-/*   Updated: 2021/05/29 11:10:06 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/01/21 13:00:41 by adrienrossi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ void	ft_putchar(char c);
 void	ft_putstr(char *str);
 void	ft_putnbr(int nb);
 void	error(char *str);
-
+size_t	ft_strlen(const char *str);
+int     ft_atoi(const char *str);
 #endif
