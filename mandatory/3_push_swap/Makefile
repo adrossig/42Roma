@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+         #
+#    By: arossign <arossign@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/25 10:53:37 by adrossig          #+#    #+#              #
-#    Updated: 2021/05/28 13:13:19 by adrossig         ###   ########.fr        #
+#    Updated: 2022/01/24 12:57:22 by arossign         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,7 @@ $(CHECKER): $(LIBFT_PATH) $(CK_OBJ) $(SD_OBJ)
 	@$(CC) $(CK_OBJ) $(SD_OBJ) $(CFLAGS) $(LDFLAGS) -o $@
 
 clean:
-	@rm -f $(PS_OBJ) $(SD_OBJ)
+	@rm -f $(PS_OBJ) $(SD_OBJ) $(CK_OBJ)
 	@make -C $(LIBFT) fclean
 
 fclean: clean
