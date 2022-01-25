@@ -15,7 +15,6 @@ Practice is nothing without theory.
 | 3 | [**push_swap**](./mandatory/3_push_swap) | C | `Sorting algorithms` `Stack concept and handling elements` `Algorithm implementation` | 2021-05-31 | 123 |
 |   | [**minitalk**](./mandatory/3_minitalk) | C | `data exchange` `UNIX signals` | 2022-01-21 | 125 |
 |   | [**fract-ol**](./mandatory/3_fract-ol) | C | `2D programmation` `fractal` | 2022-01-24 | 125 |
-|   | [**Exam02**]() | C |  |  | open |
 | 4 | minishell | C |  | closed |
 |   | [**Philosophers**](./mandatory/4_philosophers/) | C | `threads` |  | open |
 | 5 | [**cub3d**](./mandatory/5_cub3d) | C | `raycasting` `graphic design` `algorithm` |  | closed |
