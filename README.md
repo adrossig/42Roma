@@ -20,7 +20,7 @@ Practice is nothing without theory.
 |   | [**Philosophers**](./mandatory/4_philosophers/) | C | `threads` |  | open |
 | 5 | [**cub3d**](./mandatory/5_cub3d) | C | `raycasting` `graphic design` `algorithm` |  | closed |
 |   | [**netpractice**]() | - | `network` `OSI protocols` `TCP/IP` |  | closed |
-|   | CPP Module 01-08 | CPP |  | closed |
+|   | [**CPP Module 01-08**](./mandatory/5_CPP_01_08/) | CPP |  | closed |
 | 6 | ft_irc |  |  | closed |
 |   | webserv |  |  | closed |
 |   | ft_containers |  |  | closed |
