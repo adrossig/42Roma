@@ -6,7 +6,7 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 15:24:41 by arossign          #+#    #+#             */
-/*   Updated: 2022/02/08 15:27:05 by arossign         ###   ########.fr       */
+/*   Updated: 2022/02/09 12:47:09 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ static int	ft_count_words(char *str, char *set, int count)
 	while (str && str[i] != '\0')
 	{
 		count++;
-		if (!ft_strchr(set, s[i]))
+		if (!ft_strchr(set, str[i]))
 		{
-			while ((!ft_strchr(set, s[i]) || mtx[0] || mtx[1]) && str[i] != '\0')
+			while ((!ft_strchr(set, str[i]) || mtx[0] || mtx[1]) && str[i] != '\0')
 			{
 				mtx[0] = (mtx[0] + (!mtx[1] && str[i] == '\'')) % 2;
 				mtx[1] = (mtx[1] + (!mtx[0] && str[i] == '\"')) % 2;
@@ -46,7 +46,7 @@ static char	**ft_fill_array(char **aux, char *str, char *set, int i[3])
 
 	mtx[0] = 0;
 	mtx[1] = 0;
-	while (s && s[i[0]] != '\0')
+	while (str && str[i[0]] != '\0')
 	{
 		i[1] = i[0];
 		if (!ft_strchr(set, str[i[0]]))
@@ -60,7 +60,7 @@ static char	**ft_fill_array(char **aux, char *str, char *set, int i[3])
 		}
 		else
 			i[0]++;
-		aux[i[2]++] = ft_substr(s, i[1], i[0] - i[1]);
+		aux[i[2]++] = ft_substr(str, i[1], i[0] - i[1]);
 	}
 	return (aux);
 }

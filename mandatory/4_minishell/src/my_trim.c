@@ -6,7 +6,7 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 15:17:37 by arossign          #+#    #+#             */
-/*   Updated: 2022/02/08 15:23:53 by arossign         ###   ########.fr       */
+/*   Updated: 2022/02/09 17:52:29 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ char	**my_trim(char const *str, char *set)
 	aux = malloc((number_words + 1) * sizeof(char *));
 	if (aux == NULL)
 		return (NULL);
-	aux = ft_fill_array(aux, str, set, i);
+	aux = ft_fill_array(aux, str, set, mtx);
 	aux[number_words] = NULL;
 	return (aux);
 }

@@ -6,7 +6,7 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 14:55:54 by arossign          #+#    #+#             */
-/*   Updated: 2022/02/08 15:26:59 by arossign         ###   ########.fr       */
+/*   Updated: 2022/02/09 14:40:54 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 
 // Local libs
 # include "../libs/libft/includes/libft.h"
+# include "colors.h"
 
 typedef struct s_prompt
 {
@@ -39,6 +40,21 @@ typedef struct s_mini
 	int	infile;
 	int	outfile;
 }		t_mini;
+
+enum e_error
+{
+	QUOTE = 1,
+	NDIR = 2,
+	NPERM = 3,
+	NCMD = 6,
+	DUPERR = 7,
+	FORKERR = 8,
+	PIPERR = 9,
+	PIPENDERR = 10,
+	MEM = 11,
+	IS_DIR = 12,
+	NOT_DIR = 13,
+};
 
 // Function
 
@@ -69,6 +85,6 @@ void	handle_sigint_child(int sig);
 /* Function to handle SIGQUIT signals for child process */
 void	handle_sigquit(int sig);
 
-void	*mini_perror(t_prompt *prompt, int err_type, char *param, int errno);
+void	*perror(t_prompt *prompt, int err_type, char *param, int errno);
 
 #endif
