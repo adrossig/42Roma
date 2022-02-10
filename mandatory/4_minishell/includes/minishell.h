@@ -6,12 +6,12 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 14:55:54 by arossign          #+#    #+#             */
-/*   Updated: 2022/02/09 14:40:54 by arossign         ###   ########.fr       */
+/*   Updated: 2022/02/10 10:03:25 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_MINISHELL_H
-# define FT_MINISHELL_H
+#ifndef MINISHELL_H
+# define MINISHELL_H
 
 // System libs
 # include <fcntl.h>
