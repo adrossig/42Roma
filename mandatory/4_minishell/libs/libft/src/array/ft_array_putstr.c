@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_array_putstr.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/19 17:42:36 by adrossig          #+#    #+#             */
-/*   Updated: 2021/10/28 13:18:54 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 23:28:04 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Prints the contents of an array.
+ *
+ * @param array The array to print.
+ *
+ * @returns None
+ */
 int	ft_array_putstr(t_array *array)
 {
 	int	i;

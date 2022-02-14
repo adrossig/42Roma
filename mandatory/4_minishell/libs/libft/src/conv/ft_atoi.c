@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 14:52:40 by adrossig          #+#    #+#             */
-/*   Updated: 2021/11/03 18:05:25 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 22:57:06 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,13 @@ static int	ft_isdig(int c)
 	return (c >= '0' && c <= '9');
 }
 
+/**
+ * Converts a string to an integer.
+ *
+ * @param str The string to convert.
+ *
+ * @returns The integer representation of the string.
+ */
 int	ft_atoi(const char *str)
 {
 	int			i;

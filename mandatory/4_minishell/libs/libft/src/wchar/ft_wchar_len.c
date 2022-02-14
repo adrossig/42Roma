@@ -6,12 +6,19 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 11:02:01 by arossign          #+#    #+#             */
-/*   Updated: 2022/01/11 11:02:02 by arossign         ###   ########.fr       */
+/*   Updated: 2022/02/14 14:42:12 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Computes the length of a wide character.
+ *
+ * @param wch The wide character.
+ *
+ * @returns The length of the wide character.
+ */
 int	ft_wchar_len(wint_t wch)
 {
 	if (wch < 0x0 || wch > 0x7FFFFFFF)

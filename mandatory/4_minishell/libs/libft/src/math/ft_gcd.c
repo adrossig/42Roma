@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_gcd.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/18 17:34:16 by adrossig          #+#    #+#             */
-/*   Updated: 2021/10/29 13:13:10 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 23:37:09 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Computes the greatest common divisor of two numbers.
+ *
+ * @param nbr1 The first number.
+ * @param nbr2 The second number.
+ *
+ * @returns The greatest common divisor of the two numbers.
+ */
 int	ft_gcd(int nbr1, int nbr2)
 {
 	if (nbr1 < 0)

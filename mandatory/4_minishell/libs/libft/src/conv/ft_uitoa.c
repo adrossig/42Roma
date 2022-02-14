@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_uitoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/23 16:13:53 by adrossig          #+#    #+#             */
-/*   Updated: 2021/11/03 17:49:33 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 23:00:13 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,13 @@ static char	*ft_generate(char *nc, long num, int length, int neg)
 	return (nc);
 }
 
+/**
+ * Converts an unsigned integer to a string.
+ *
+ * @param n The unsigned integer to convert.
+ *
+ * @returns A string representation of the unsigned integer.
+ */
 char	*ft_uitoa(unsigned int n)
 {
 	int		length;

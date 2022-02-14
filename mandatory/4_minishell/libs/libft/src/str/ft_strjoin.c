@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 15:38:49 by adrossig          #+#    #+#             */
-/*   Updated: 2021/10/28 12:37:10 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 23:58:56 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Joins two strings together.
+ *
+ * @param s1 The first string.
+ * @param s2 The second string.
+ *
+ * @returns The joined string.
+ */
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	i;

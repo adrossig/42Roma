@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_base.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:26:39 by adrossig          #+#    #+#             */
-/*   Updated: 2021/11/03 18:06:06 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 23:06:27 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Converts a number to a string in the specified base.
+ *
+ * @param number The number to convert.
+ * @param base The base to convert to.
+ *
+ * @returns The string representation of the number.
+ */
 static	char	*ft_base(unsigned long long number, int base, int count,
 	char *str)
 {

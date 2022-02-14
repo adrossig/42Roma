@@ -6,7 +6,7 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 15:24:41 by arossign          #+#    #+#             */
-/*   Updated: 2022/02/09 12:47:09 by arossign         ###   ########.fr       */
+/*   Updated: 2022/02/11 22:53:49 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,14 @@ static int	ft_count_words(char *str, char *set, int count)
 	return (count);
 }
 
+/**
+ * Splits a string into an array of strings based on a set of delimiters.
+ *
+ * @param str The string to split.
+ * @param set The set of delimiters.
+ *
+ * @returns An array of strings.
+ */
 static char	**ft_fill_array(char **aux, char *str, char *set, int i[3])
 {
 	int		mtx[2];
@@ -66,6 +74,14 @@ static char	**ft_fill_array(char **aux, char *str, char *set, int i[3])
 }
 
 /* Copy of ft_split but includes separators and takes quotes into account */
+/**
+ * Splits a string into an array of strings based on a delimiter.
+ *
+ * @param s The string to split.
+ * @param set The delimiter to split the string by.
+ *
+ * @returns An array of strings split by the delimiter.
+ */
 char	**ft_cmdsubsplit(char const *s, char *set)
 {
 	char	**aux;

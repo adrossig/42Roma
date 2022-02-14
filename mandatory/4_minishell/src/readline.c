@@ -6,7 +6,7 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 15:02:04 by arossign          #+#    #+#             */
-/*   Updated: 2022/02/08 15:14:35 by arossign         ###   ########.fr       */
+/*   Updated: 2022/02/11 22:55:08 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,14 @@ void	my_readline_bis(t_prompt *prompt, char *str, char *output, int isNull)
 }
 
 /* Uses readline inside a child process and returns the read line */
+/**
+ * Reads a line from the standard input.
+ *
+ * @param prompt The prompt to display.
+ * @param str The string to store the input in.
+ *
+ * @returns The input string.
+ */
 char	*my_readline(t_prompt *prompt, char *str)
 {
 	pid_t	pid;

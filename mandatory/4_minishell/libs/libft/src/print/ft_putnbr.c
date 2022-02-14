@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 15:34:03 by adrossig          #+#    #+#             */
-/*   Updated: 2021/05/26 16:46:51 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 23:47:14 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Prints an integer to the console.
+ *
+ * @param nb The integer to print.
+ *
+ * @returns None
+ */
 void	ft_putnbr(int nb)
 {
 	if (nb < 0)

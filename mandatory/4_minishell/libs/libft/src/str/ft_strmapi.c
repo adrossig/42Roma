@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 15:40:06 by adrossig          #+#    #+#             */
-/*   Updated: 2021/05/26 16:46:51 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/12 00:01:10 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Applies a function to each character of a string and returns a new string.
+ *
+ * @param s The string to map.
+ * @param f The function to apply to each character.
+ *
+ * @returns A new string with the results of the function.
+ */
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
 	char	*str;

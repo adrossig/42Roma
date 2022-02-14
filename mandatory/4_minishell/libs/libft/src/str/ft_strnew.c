@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 15:41:36 by adrossig          #+#    #+#             */
-/*   Updated: 2021/10/28 12:33:03 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/12 00:03:41 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Allocates a new string of size size and initializes it to '\0'.
+ *
+ * @param size The size of the string to allocate.
+ *
+ * @returns A pointer to the newly allocated string.
+ */
 char	*ft_strnew(size_t size)
 {
 	char	*locma;

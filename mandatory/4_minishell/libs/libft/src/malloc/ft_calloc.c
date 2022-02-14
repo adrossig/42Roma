@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 14:54:51 by adrossig          #+#    #+#             */
-/*   Updated: 2021/10/28 12:43:55 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 23:36:29 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Allocates memory for an array of n elements of size size.
+ *
+ * @param n The number of elements in the array.
+ * @param size The size of each element.
+ *
+ * @returns A pointer to the allocated memory.
+ */
 void	*ft_calloc(size_t count, size_t size)
 {
 	char	*var;

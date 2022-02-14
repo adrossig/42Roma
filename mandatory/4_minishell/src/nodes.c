@@ -6,7 +6,7 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 10:13:18 by arossign          #+#    #+#             */
-/*   Updated: 2022/02/10 10:14:35 by arossign         ###   ########.fr       */
+/*   Updated: 2022/02/11 22:48:16 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,13 @@ static t_mini	*get_params(t_prompt *p, t_mini *node, char **a[2], int *i)
 	return (node);
 }
 
+/**
+ * Trims all the strings in a matrix of strings.
+ *
+ * @param args The matrix of strings to trim.
+ *
+ * @returns The trimmed matrix of strings.
+ */
 static char	**get_trimmed(char **args)
 {
 	char	**temp;
@@ -78,6 +85,15 @@ static t_list	*stop_fill(t_list *cmds, char **args, char **temp)
 	return (NULL);
 }
 
+/**
+ * Fills a list with nodes containing the arguments.
+ *
+ * @param prompt The prompt to use.
+ * @param args The arguments to fill the list with.
+ * @param i The current index of the arguments.
+ *
+ * @returns The filled list.
+ */
 t_list	*fill_nodes(t_prompt *prompt, char **args, int i)
 {
 	t_list	*cmds[2];

@@ -6,13 +6,22 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 14:58:43 by arossign          #+#    #+#             */
-/*   Updated: 2022/02/08 15:15:50 by arossign         ###   ########.fr       */
+/*   Updated: 2022/02/11 22:51:10 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
-/* Prints a custom error message to standard error */
+/**
+ * Prints an error message to stderr.
+ *
+ * @param prompt The prompt struct.
+ * @param err_type The type of error.
+ * @param param The parameter to the error.
+ * @param errno The error number.
+ *
+ * @returns NULL.
+**/
 void	*error(t_prompt *prompt, int err_type, char *param, int errno)
 {
 	prompt->e_status = errno;

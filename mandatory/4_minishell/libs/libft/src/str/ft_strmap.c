@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 15:39:49 by adrossig          #+#    #+#             */
-/*   Updated: 2021/10/28 12:34:14 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/12 00:00:34 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Applies a function to every character in a string.
+ *
+ * @param s The string to apply the function to.
+ * @param f The function to apply.
+ *
+ * @returns A new string with the function applied to every character.
+ */
 char	*ft_strmap(const char *s, char (*f)(char))
 {
 	char	*s2;

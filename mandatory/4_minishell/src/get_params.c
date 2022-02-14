@@ -6,7 +6,7 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 10:09:08 by arossign          #+#    #+#             */
-/*   Updated: 2022/02/10 10:09:45 by arossign         ###   ########.fr       */
+/*   Updated: 2022/02/11 22:51:36 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,16 @@ int	get_fd(t_prompt *prompt, int oldfd, char *path, int flags[2])
 	return (fd);
 }
 
+/**
+ * Gets the output file for the shell.
+ *
+ * @param prompt The prompt struct.
+ * @param node The node struct.
+ * @param args The arguments.
+ * @param i The index of the arguments.
+ *
+ * @returns The output file for the shell.
+ */
 t_mini	*get_outfile1(t_prompt *prompt, t_mini *node, char **args, int *i)
 {
 	char	*nl;
@@ -62,6 +72,16 @@ t_mini	*get_outfile1(t_prompt *prompt, t_mini *node, char **args, int *i)
 	return (node);
 }
 
+/**
+ * Gets the output file for the shell.
+ *
+ * @param prompt The prompt struct.
+ * @param node The node struct.
+ * @param args The arguments.
+ * @param i The index of the argument.
+ *
+ * @returns The output file for the shell.
+ */
 t_mini	*get_outfile2(t_prompt *prompt, t_mini *node, char **args, int *i)
 {
 	char	*nl;
@@ -87,6 +107,16 @@ t_mini	*get_outfile2(t_prompt *prompt, t_mini *node, char **args, int *i)
 	return (node);
 }
 
+/**
+ * Gets the input file descriptor for the shell.
+ *
+ * @param prompt The prompt struct for the shell.
+ * @param node The node struct for the shell.
+ * @param args The arguments passed to the shell.
+ * @param i The index of the argument passed to the shell.
+ *
+ * @returns The input file descriptor for the shell.
+ */
 t_mini	*get_infile1(t_prompt *prompt, t_mini *node, char **args, int *i)
 {
 	char	*nl;
@@ -112,6 +142,16 @@ t_mini	*get_infile1(t_prompt *prompt, t_mini *node, char **args, int *i)
 	return (node);
 }
 
+/**
+ * Gets the input file for the here-document.
+ *
+ * @param prompt The prompt struct.
+ * @param node The mini struct.
+ * @param args The arguments.
+ * @param i The index.
+ *
+ * @returns The input file.
+ */
 t_mini	*get_infile2(t_prompt *prompt, t_mini *node, char **args, int *i)
 {
 	char	*aux[2];

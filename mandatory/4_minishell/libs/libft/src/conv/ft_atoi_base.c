@@ -6,7 +6,7 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 11:02:58 by arossign          #+#    #+#             */
-/*   Updated: 2022/01/11 11:02:59 by arossign         ###   ########.fr       */
+/*   Updated: 2022/02/11 23:13:56 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,14 @@ static int	atoi_power(int base, unsigned int power)
 	return (base);
 }
 
+/**
+ * Converts a string to an integer.
+ *
+ * @param str The string to convert.
+ * @param base The base of the string.
+ *
+ * @returns The integer representation of the string.
+ */
 int	ft_atoi_base(const char *str, int base)
 {
 	int	nbr;

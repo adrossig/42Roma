@@ -3,15 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 15:40:47 by adrossig          #+#    #+#             */
-/*   Updated: 2021/10/28 12:31:42 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/12 00:02:57 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Copies the first i characters of src to dest.
+ *
+ * @param dest The destination string.
+ * @param src The source string.
+ * @param i The number of characters to copy.
+ *
+ * @returns The destination string.
+ */
 char	*ft_strncpy(char *dest, const char *src, size_t i)
 {
 	unsigned int	j;

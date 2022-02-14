@@ -6,12 +6,19 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 12:44:18 by arossign          #+#    #+#             */
-/*   Updated: 2022/02/10 10:05:36 by arossign         ###   ########.fr       */
+/*   Updated: 2022/02/11 22:53:29 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
+/**
+ * A function that forks a child process and waits for it to finish.
+ *
+ * @param prompt The prompt to use when printing messages.
+ *
+ * @returns The pid of the child process.
+ */
 static pid_t get_pid(t_prompt *prompt)
 {
 	pid_t	pid;
@@ -28,6 +35,16 @@ static pid_t get_pid(t_prompt *prompt)
 	return (pid - 1);
 }
 
+/**
+ * Initializes the prompt.
+ *
+ * @param prompt The prompt to initialize.
+ * @param str The current working directory.
+ * @param av The arguments to the program.
+ * @param env The environment variables.
+ *
+ * @returns The initialized prompt.
+ */
 static t_prompt	init_vars(t_prompt prompt, char *str, char **av, char **env)
 {
 	char	*num;
@@ -55,6 +72,14 @@ static t_prompt	init_vars(t_prompt prompt, char *str, char **av, char **env)
 	return (prompt);
 }
 
+/**
+ * Initializes the prompt struct.
+ *
+ * @param av The arguments passed to the program.
+ * @param env The environment variables.
+ *
+ * @returns The prompt struct.
+ */
 static t_prompt	init_prompt(char **av, char **env)
 {
 	t_prompt	prompt;
@@ -69,6 +94,15 @@ static t_prompt	init_prompt(char **av, char **env)
 	return (prompt);
 }
 
+/**
+ * The main function of the minishell.
+ *
+ * @param ac The number of arguments.
+ * @param av The arguments.
+ * @param env The environment.
+ *
+ * @returns The exit status of the program.
+ */
 int	main(int ac, char **av, char **env)
 {
 	char				*str;

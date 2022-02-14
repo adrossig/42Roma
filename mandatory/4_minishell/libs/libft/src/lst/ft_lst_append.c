@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lst_append.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/18 17:53:08 by adrossig          #+#    #+#             */
-/*   Updated: 2021/05/26 16:46:51 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 23:29:33 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Appends a list to another list.
+ *
+ * @param head The head of the list to append to.
+ * @param last The list to append.
+ *
+ * @returns The head of the list.
+ */
 t_list	*ft_lstappend(t_list *head, t_list *last)
 {
 	t_list	*current;

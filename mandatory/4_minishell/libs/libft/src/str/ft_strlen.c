@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 15:39:34 by adrossig          #+#    #+#             */
-/*   Updated: 2021/11/03 18:02:55 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/12 00:00:23 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Computes the length of a string.
+ *
+ * @param str The string whose length is to be computed.
+ *
+ * @returns The length of the string.
+ */
 size_t	ft_strlen(const char *str)
 {
 	size_t	i;

@@ -6,7 +6,7 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 10:18:29 by arossign          #+#    #+#             */
-/*   Updated: 2022/02/10 10:18:40 by arossign         ###   ########.fr       */
+/*   Updated: 2022/02/11 22:47:22 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ extern int	g_fds[2][2];
 
 void	handle_sigint(int sig)
 {
+
 	int	err;
 
 	if (sig == SIGINT)

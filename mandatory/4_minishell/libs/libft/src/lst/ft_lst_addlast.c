@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lst_addlast.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 19:54:59 by adrossig          #+#    #+#             */
-/*   Updated: 2021/11/02 19:55:08 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 23:29:25 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Adds a new element to the end of a linked list.
+ *
+ * @param head The head of the linked list.
+ * @param last The new element to add to the end of the linked list.
+ *
+ * @returns None
+ */
 void	ft_lst_addlast(t_list **head, t_list *last)
 {
 	if (!last || !head)

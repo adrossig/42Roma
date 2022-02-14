@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ispunct.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 15:24:49 by adrossig          #+#    #+#             */
-/*   Updated: 2021/11/03 17:44:04 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 23:17:35 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Checks if a character is punctuation.
+ *
+ * @param c The character to check.
+ *
+ * @returns 1 if the character is punctuation, 0 otherwise.
+ */
 int	ft_ispunct(int c)
 {
 	if (!ft_isalnum(c) && ft_isprint(c))

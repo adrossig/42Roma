@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_octaltodec.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/23 11:28:16 by adrossig          #+#    #+#             */
-/*   Updated: 2021/10/28 12:50:39 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 23:00:23 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Converts an octal number to a decimal number.
+ *
+ * @param octal The octal number to convert.
+ *
+ * @returns The decimal number.
+ */
 long long	ft_octaltodec(int octal)
 {
 	int	decimal;

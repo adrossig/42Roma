@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_charset.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 14:55:48 by adrossig          #+#    #+#             */
-/*   Updated: 2021/10/28 13:20:29 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 23:14:04 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Checks if a character is in a given character set.
+ *
+ * @param str The character to check.
+ * @param charset The character set to check against.
+ *
+ * @returns 1 if the character is in the character set, 0 otherwise.
+ */
 int	ft_charset(char str, char *charset)
 {
 	int	i;

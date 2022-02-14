@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 15:25:38 by adrossig          #+#    #+#             */
-/*   Updated: 2021/11/03 17:39:05 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 23:00:50 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,13 @@ static char	*ft_itoa_bis(int count, int sign, int div, long nb)
 	return (s);
 }
 
+/**
+ * Converts an integer to a string.
+ *
+ * @param n The integer to convert.
+ *
+ * @returns The string representation of the integer.
+ */
 char	*ft_itoa(int n)
 {
 	int		div;

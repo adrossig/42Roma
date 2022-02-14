@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_dectobin.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/18 15:12:50 by adrossig          #+#    #+#             */
-/*   Updated: 2021/10/28 12:50:25 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 22:57:39 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Converts a decimal number to binary.
+ *
+ * @param decimal The decimal number to convert.
+ *
+ * @returns The binary representation of the decimal number.
+ */
 long long	ft_dectobin(int decimal)
 {
 	long long	binary;

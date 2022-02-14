@@ -3,15 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_vector_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 10:54:31 by adrossig          #+#    #+#             */
-/*   Updated: 2021/10/28 12:41:50 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/12 00:07:56 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Initializes a vector structure.
+ *
+ * @param vector The vector to initialize.
+ * @param max The maximum number of elements in the vector.
+ * @param free The function to call to free the elements in the vector.
+ * @param dup The function to call to duplicate the elements in the vector.
+ *
+ * @returns OK if the vector was successfully initialized, KO otherwise.
+ */
 int	ft_vector_init(t_vector *vector, size_t max, t_free free, t_dup dup)
 {
 	if (!vector || !free || !max)
@@ -28,6 +38,13 @@ int	ft_vector_init(t_vector *vector, size_t max, t_free free, t_dup dup)
 	return (OK);
 }
 
+/**
+ * Extends the capacity of a vector.
+ *
+ * @param vector The vector to extend.
+ *
+ * @returns OK if the vector was extended, KO otherwise.
+ */
 int	ft_vector_extend(t_vector *vector)
 {
 	size_t	i;

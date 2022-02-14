@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 15:47:33 by adrossig          #+#    #+#             */
-/*   Updated: 2021/05/26 16:46:51 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/12 00:06:03 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ '.
+ * Computes the length of a string. '.
+ * '.
+ * @param s1 The string to compute the length of. '.
+ * '.
+ * @returns The length of the string. '.
+ */
 char	*ft_strtrim(const char *s1, const char *set)
 {
 	size_t	i;

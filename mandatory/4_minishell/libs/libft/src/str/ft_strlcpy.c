@@ -3,15 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 15:39:19 by adrossig          #+#    #+#             */
-/*   Updated: 2021/10/28 12:38:05 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 23:59:19 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Copies the string src to dest, but only up to size - 1.
+ *
+ * @param dest The destination string.
+ * @param src The source string.
+ * @param size The size of the destination string.
+ *
+ * @returns The length of the source string.
+ */
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	tmp;

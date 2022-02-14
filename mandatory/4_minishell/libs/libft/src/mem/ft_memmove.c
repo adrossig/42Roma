@@ -3,15 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 15:31:51 by adrossig          #+#    #+#             */
-/*   Updated: 2021/10/28 12:29:35 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 23:45:16 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Copies n bytes from src to dest.
+ *
+ * @param dest The destination buffer.
+ * @param src The source buffer.
+ * @param n The number of bytes to copy.
+ *
+ * @returns The destination buffer.
+ */
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t	i;

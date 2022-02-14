@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 15:43:05 by adrossig          #+#    #+#             */
-/*   Updated: 2021/10/28 12:38:39 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/12 00:04:20 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Computes the length of a string.
+ *
+ * @param str The string whose length is to be computed.
+ *
+ * @returns The length of the string.
+ */
 char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
 	unsigned int	i;

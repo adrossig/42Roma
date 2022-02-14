@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_dectohexa.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/18 14:05:27 by adrossig          #+#    #+#             */
-/*   Updated: 2021/10/28 12:52:02 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 23:05:54 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Converts a decimal number to a hexadecimal number.
+ *
+ * @param decimal The decimal number to convert.
+ *
+ * @returns The hexadecimal number.
+ */
 char	*ft_dectohexa(int decimal)
 {
 	int		remainder;

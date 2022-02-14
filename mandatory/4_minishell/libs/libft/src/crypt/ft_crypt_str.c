@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_crypt_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/18 11:23:24 by adrossig          #+#    #+#             */
-/*   Updated: 2021/10/28 13:18:32 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 23:19:21 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,14 @@ static int	entry(int min, int max, int nbr)
 	return (result);
 }
 
+/**
+ * Encrypts a string.
+ *
+ * @param decalage The amount to shift the characters by.
+ * @param tab The string to encrypt.
+ *
+ * @returns None
+ */
 void	ft_crypt_str(int decalage, char *tab)
 {
 	int	minimum;

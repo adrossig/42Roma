@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_armstrong.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/18 16:09:33 by adrossig          #+#    #+#             */
-/*   Updated: 2021/05/26 16:46:51 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 23:36:46 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Computes the power of a number.
+ *
+ * @param base The base of the power.
+ * @param exponent The exponent of the power.
+ *
+ * @returns The power of the base to the exponent.
+ */
 void	ft_armstrong(int num)
 {
 	int		original_num;

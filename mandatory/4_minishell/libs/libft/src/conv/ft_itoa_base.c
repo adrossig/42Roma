@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 10:45:44 by adrossig          #+#    #+#             */
-/*   Updated: 2021/10/29 13:11:12 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 23:01:15 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Converts an integer to a string using the given base.
+ *
+ * @param n The integer to convert.
+ * @param base The base to use.
+ *
+ * @returns The string representation of the integer.
+ */
 char	*ft_itoa_base(unsigned int n, const char *base)
 {
 	unsigned int	div;

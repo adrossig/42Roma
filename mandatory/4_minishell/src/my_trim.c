@@ -6,12 +6,21 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 15:17:37 by arossign          #+#    #+#             */
-/*   Updated: 2022/02/09 17:52:29 by arossign         ###   ########.fr       */
+/*   Updated: 2022/02/11 22:54:14 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
+/**
+ * Counts the number of words in a string.
+ *
+ * @param s The string to count the words in.
+ * @param set The set of characters to count as words.
+ * @param mtx The matrix to store the results in.
+ *
+ * @returns The number of words in the string.
+ */
 static int	ft_count_words(const char *s, char *set, int mtx[2])
 {
 	int		temp[2];
@@ -68,6 +77,14 @@ static char	**ft_fill_array(char **aux, char const *s, char *set, int mtx[3])
 }
 
 /* Splits command and args into a matrix, taking quotes into account */
+/**
+ * Trims a string by removing all characters in the set.
+ *
+ * @param str The string to trim.
+ * @param set The set of characters to remove.
+ *
+ * @returns The trimmed string.
+ */
 char	**my_trim(char const *str, char *set)
 {
 	char	**aux;

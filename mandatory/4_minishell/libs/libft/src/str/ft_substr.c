@@ -3,15 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 15:43:49 by adrossig          #+#    #+#             */
-/*   Updated: 2021/10/28 12:33:57 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/12 00:07:03 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Computes the substring of a string.
+ *
+ * @param s The string to be sliced.
+ * @param start The start index of the slice.
+ * @param len The length of the slice.
+ *
+ * @returns The substring of the string.
+ */
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	char	*str;

@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lcm.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/18 17:30:07 by adrossig          #+#    #+#             */
-/*   Updated: 2021/10/28 12:46:43 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 23:37:54 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Computes the least common multiple of two numbers.
+ *
+ * @param nbr1 The first number.
+ * @param nbr2 The second number.
+ *
+ * @returns The least common multiple of the two numbers.
+ */
 int	ft_lcm(int nbr1, int nbr2)
 {
 	int	min;

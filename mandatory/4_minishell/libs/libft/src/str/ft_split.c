@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 10:50:53 by adrossig          #+#    #+#             */
-/*   Updated: 2021/10/28 12:35:37 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 23:49:32 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,14 @@ static char	*f_strndup(const char *s1, size_t n)
 	return (cp);
 }
 
+/**
+ * Splits a string into an array of strings based on a delimiter.
+ *
+ * @param s The string to split.
+ * @param c The delimiter.
+ *
+ * @returns An array of strings.
+ */
 char	**ft_split(const char *s, char c)
 {
 	char	**d;

@@ -6,7 +6,7 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 10:15:22 by arossign          #+#    #+#             */
-/*   Updated: 2022/02/10 10:17:22 by arossign         ###   ########.fr       */
+/*   Updated: 2022/02/11 22:47:47 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,16 @@ static char	*get_substr_var(char *str, int i, t_prompt *prompt)
 	return (aux);
 }
 
+/**
+ * Expands variables in a string.
+ *
+ * @param str The string to expand variables in.
+ * @param i The current index in the string.
+ * @param quotes The current quote state.
+ * @param prompt The prompt to use for variable expansion.
+ *
+ * @returns The expanded string.
+*/
 char	*expand_vars(char *str, int i, int quotes[2], t_prompt *prompt)
 {
 	quotes[0] = 0;

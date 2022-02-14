@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_arraylst_free.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/18 11:31:46 by adrossig          #+#    #+#             */
-/*   Updated: 2021/05/26 16:46:51 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 22:56:12 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Frees the memory allocated for an arraylist.
+ *
+ * @param arraylist The arraylist to free.
+ *
+ * @returns None
+ */
 void	ft_arraylst_free(t_array *arraylist)
 {
 	if (arraylist != NULL)

@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_vector_delete.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 11:15:52 by adrossig          #+#    #+#             */
-/*   Updated: 2021/10/28 12:42:49 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/12 00:08:06 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Deletes an element from a vector.
+ *
+ * @param vector The vector to delete an element from.
+ * @param i The index of the element to delete.
+ *
+ * @returns OK if the element was deleted, KO otherwise.
+ */
 int	ft_vector_delete(t_vector *vector, size_t i)
 {
 	if (!vector || !vector->a || i >= vector->len)
@@ -26,6 +34,13 @@ int	ft_vector_delete(t_vector *vector, size_t i)
 	return (OK);
 }
 
+/**
+ * Frees the memory allocated for a vector.
+ *
+ * @param vector The vector to free.
+ *
+ * @returns None
+ */
 int	ft_vector_free(t_vector *vector)
 {
 	size_t	i;

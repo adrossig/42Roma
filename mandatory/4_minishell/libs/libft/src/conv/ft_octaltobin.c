@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_octaltobin.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/18 16:02:41 by adrossig          #+#    #+#             */
-/*   Updated: 2019/12/19 17:35:06 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 23:00:29 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
+/**
+ * Converts an octal number to binary.
+ *
+ * @param octal The octal number.
+ *
+ * @returns The binary number.
+ */
 long long	ft_octaltobin(int octal)
 {
 	int			decimal;

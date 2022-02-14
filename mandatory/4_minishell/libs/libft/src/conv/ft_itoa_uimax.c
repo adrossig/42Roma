@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_uimax.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 10:46:16 by adrossig          #+#    #+#             */
-/*   Updated: 2021/10/28 13:17:16 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 23:00:56 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Computes the length of an unsigned integer.
+ *
+ * @param n The unsigned integer.
+ *
+ * @returns The length of the unsigned integer.
+ */
 char	*ft_itoa_uimax(uintmax_t nb)
 {
 	char	*ret;

@@ -6,7 +6,7 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 11:02:54 by arossign          #+#    #+#             */
-/*   Updated: 2022/01/11 11:02:55 by arossign         ###   ########.fr       */
+/*   Updated: 2022/02/11 22:57:02 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,13 @@ static int	invisible_or_not(const char nptr)
 	return (u);
 }
 
+/**
+ * Converts a string to an integer.
+ *
+ * @param nptr The string to convert.
+ *
+ * @returns The integer value of the string.
+ */
 long long	ft_atoill(const char *nptr)
 {
 	int			i;

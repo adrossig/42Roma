@@ -3,15 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnjoin.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 12:01:21 by adrossig          #+#    #+#             */
-/*   Updated: 2021/10/28 12:37:44 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/12 00:04:10 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Joins two strings together.
+ *
+ * @param s1 The first string.
+ * @param s2 The second string.
+ * @param n The number of characters to join.
+ *
+ * @returns The joined string.
+ */
 char	*ft_strnjoin(char *s1, char *s2, int n)
 {
 	char	*str;

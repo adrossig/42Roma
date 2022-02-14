@@ -6,12 +6,20 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 10:06:51 by arossign          #+#    #+#             */
-/*   Updated: 2022/02/10 10:08:15 by arossign         ###   ########.fr       */
+/*   Updated: 2022/02/11 22:54:38 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
+/**
+ * Splits a string into an array of strings based on the delimiter.
+ *
+ * @param str The string to split.
+ * @param delim The delimiter to split the string on.
+ *
+ * @returns An array of strings.
+ */
 static char	**split_all(char **args, t_prompt *prompt)
 {
 	char	**subsplit;
@@ -57,6 +65,14 @@ static void	*parse_args(char **args, t_prompt *p)
 	return (p);
 }
 
+/**
+ * Parses the arguments of the shell.
+ *
+ * @param out The output of the shell.
+ * @param p The prompt of the shell.
+ *
+ * @returns The parsed arguments.
+ */
 void	*check_args(char *out, t_prompt *p)
 {
 	char	**a;

@@ -3,15 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init_dict.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 12:41:15 by adrossig          #+#    #+#             */
-/*   Updated: 2021/10/28 12:43:10 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 23:27:47 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Creates a dictionary.
+ *
+ * @returns A pointer to the dictionary.
+ */
 t_dictionary	*create_dict(void)
 {
 	t_dictionary	*locma;

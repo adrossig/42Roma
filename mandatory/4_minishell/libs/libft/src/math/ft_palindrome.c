@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_palindrome.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/18 17:38:45 by adrossig          #+#    #+#             */
-/*   Updated: 2021/10/28 12:47:16 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 23:38:03 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Checks if a number is a palindrome.
+ *
+ * @param number The number to check.
+ *
+ * @returns None
+ */
 int	ft_palindrome(int number)
 {
 	int	reversed_num;

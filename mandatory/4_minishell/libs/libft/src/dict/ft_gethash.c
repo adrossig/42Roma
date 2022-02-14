@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_gethash.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 12:45:53 by adrossig          #+#    #+#             */
-/*   Updated: 2021/10/28 12:43:23 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 23:27:39 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Computes the hash value of a string.
+ *
+ * @param string The string to hash.
+ *
+ * @returns The hash value of the string.
+ */
 int	ft_gethash(char *string)
 {
 	unsigned int	hash;

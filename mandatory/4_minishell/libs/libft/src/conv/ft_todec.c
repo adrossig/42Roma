@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_todec.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/19 14:00:56 by adrossig          #+#    #+#             */
-/*   Updated: 2021/10/28 13:18:16 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 22:58:36 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,14 @@ static int	value(char c)
 		return ((int)c - 'A' + 10);
 }
 
+/**
+ * Converts a string to a decimal number.
+ *
+ * @param str The string to convert.
+ * @param base The base of the string.
+ *
+ * @returns The converted number.
+ */
 int	ft_todec(char *str, int base)
 {
 	int	lenght;

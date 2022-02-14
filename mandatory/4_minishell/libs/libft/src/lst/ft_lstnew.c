@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 15:29:22 by adrossig          #+#    #+#             */
-/*   Updated: 2021/11/03 18:04:32 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 23:36:12 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Creates a new list element.
+ *
+ * @param content The content of the new list element.
+ *
+ * @returns The new list element.
+ */
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*liste;
@@ -25,6 +32,14 @@ t_list	*ft_lstnew(void *content)
 	return (liste);
 }
 
+/**
+ * Creates a new list node.
+ *
+ * @param content The content of the new node.
+ * @param content_size The size of the content.
+ *
+ * @returns The new list node.
+ */
 t_list	*ft_lstnnew(void const *content, size_t content_size)
 {
 	t_list	*new;

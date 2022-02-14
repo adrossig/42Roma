@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 15:20:44 by adrossig          #+#    #+#             */
-/*   Updated: 2021/10/28 12:48:52 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 23:37:32 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Checks if a number is prime.
+ *
+ * @param nbr The number to check.
+ *
+ * @returns 1 if the number is prime, 0 otherwise.
+ */
 int	ft_is_prime(int nbr)
 {
 	int	i;

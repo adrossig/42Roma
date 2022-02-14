@@ -3,15 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 15:41:20 by adrossig          #+#    #+#             */
-/*   Updated: 2021/10/28 12:36:04 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/12 00:03:06 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Compares two strings for equality.
+ *
+ * @param s1 The first string.
+ * @param s2 The second string.
+ * @param n The number of characters to compare.
+ *
+ * @returns 1 if the strings are equal, 0 otherwise.
+ */
 int	ft_strnequ(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;

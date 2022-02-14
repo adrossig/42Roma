@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_uncrypt_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/18 11:20:42 by adrossig          #+#    #+#             */
-/*   Updated: 2021/05/26 16:46:51 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/11 23:19:25 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/**
+ * Decrypts a string.
+ *
+ * @param decalage The amount to shift the string.
+ * @param tab The string to decrypt.
+ *
+ * @returns None
+ */
 void	ft_uncrypt_str(int decalage, char *tab)
 {
 	ft_crypt_str(decalage * -1, tab);

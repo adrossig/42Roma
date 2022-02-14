@@ -6,7 +6,7 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 10:10:57 by arossign          #+#    #+#             */
-/*   Updated: 2022/02/10 10:12:42 by arossign         ###   ########.fr       */
+/*   Updated: 2022/02/11 22:55:15 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,15 @@ static int	malloc_len(char const *s1)
 	return (count);
 }
 
+/**
+ * Trims leading and trailing whitespace from a string.
+ *
+ * @param s1 The string to trim.
+ * @param squote Whether to trim single quotes.
+ * @param dquote Whether to trim double quotes.
+ *
+ * @returns The trimmed string.
+ */
 char	*ft_strtrim_all(char const *s1, int squote, int dquote)
 {
 	int		count;
