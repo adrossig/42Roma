@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 15:57:43 by adrossig          #+#    #+#             */
-/*   Updated: 2021/11/03 17:55:35 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/16 10:45:29 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_flags
 	int		minus;
 	int		type;
 	int		dot;
+	int		fd;
 }	t_flags;
 
 t_flags	ft_initialize(void);

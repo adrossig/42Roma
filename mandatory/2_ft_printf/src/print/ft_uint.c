@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_uint.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:15:09 by adrossig          #+#    #+#             */
-/*   Updated: 2021/11/03 17:56:25 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/16 10:49:48 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,18 @@ static int	ft_input(char *u_num, t_flags flags)
 	count = 0;
 	if (flags.dot >= 0)
 		count = count + ft_width(flags.dot - 1, ft_strlen(u_num) - 1, 1);
-	count = count + ft_putsp(u_num, ft_strlen(u_num));
+	count = count + ft_putsp(u_num, ft_strlen(u_num), flags.fd);
 	return (count);
 }
 
+/**
+ * Take a string to pass them in an unsigned int
+ *
+ * @param str The string to print.
+ * @param flags The flags to use for printing.
+ *
+ * @returns The unsigned int with the precision specified.
+ */
 static int	ft_put_uint(char *u_num, t_flags flags)
 {
 	int	count;
@@ -44,6 +52,14 @@ static int	ft_put_uint(char *u_num, t_flags flags)
 	return (count);
 }
 
+/**
+ * Prints an unsigned integer to the console.
+ *
+ * @param number The unsigned integer to print.
+ * @param flags The flags to use for printing.
+ *
+ * @returns The number of characters printed.
+ */
 int	ft_uint(unsigned int number, t_flags flags)
 {
 	int		count;

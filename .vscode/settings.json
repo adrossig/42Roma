@@ -73,7 +73,11 @@
 		"unordered_map": "cpp",
 		"utility": "cpp",
 		"vector": "cpp",
-		"random": "c"
+		"random": "c",
+		"ft_printf.h": "c",
+		"__functional_base_03": "c",
+		"compare": "c",
+		"unistd.h": "c"
 	},
 	"C_Cpp.errorSquiggles": "Enabled",
 	"C_Cpp.intelliSenseEngineFallback": "Enabled",

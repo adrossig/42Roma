@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_hexa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:09:06 by adrossig          #+#    #+#             */
-/*   Updated: 2021/11/03 17:57:10 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/16 10:51:33 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	ft_hexa_input(char *hex, t_flags flags)
 	{
 		count = count + ft_width(flags.dot - 1, ft_strlen(hex) - 1, 1);
 	}
-	count = count + ft_putsp(hex, ft_strlen(hex));
+	count = count + ft_putsp(hex, ft_strlen(hex), flags.fd);
 	return (count);
 }
 
@@ -40,14 +40,21 @@ static int	ft_put_hexa(char *hex, t_flags flags)
 		count = count + ft_width(flags.width, 0, 0);
 	}
 	else
-	{
 		count = count + ft_width(flags.width, ft_strlen(hex), flags.zero);
-	}
 	if (flags.minus == 0)
 		count = count + ft_hexa_input(hex, flags);
 	return (count);
 }
 
+/**
+ * Prints a hexadecimal number.
+ *
+ * @param number The number to print.
+ * @param lowercase Whether to print the number in lowercase.
+ * @param flags The flags to use.
+ *
+ * @returns The number of characters printed.
+ */
 int	ft_hexa(unsigned int number, int lowercase, t_flags flags)
 {
 	char	*hex;

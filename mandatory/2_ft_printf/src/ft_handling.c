@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_handling.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 15:40:01 by adrossig          #+#    #+#             */
-/*   Updated: 2021/11/03 18:01:37 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/16 10:44:40 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
+/**
+ * Prints a character.
+ *
+ * @param c The character to print.
+ * @param flags The flags to use.
+ *
+ * @returns The number of characters printed.
+ */
 int	ft_handling(int c, t_flags flags, va_list args)
 {
 	int	count;
@@ -36,7 +44,16 @@ int	ft_handling(int c, t_flags flags, va_list args)
 	return (count);
 }
 
-int	ft_handling_input(const char *str, va_list args)
+/**
+ * Handles the input for the ft_printf function.
+ *
+ * @param str The string to be printed.
+ * @param args The arguments to be printed.
+ * @param fd The file descriptor to be used.
+ *
+ * @returns The number of characters printed.
+ */
+int	ft_handling_input(const char *str, va_list args, int fd)
 {
 	int		i;
 	int		count;
@@ -46,18 +63,18 @@ int	ft_handling_input(const char *str, va_list args)
 	count = 0;
 	while (!0)
 	{
-		flags = ft_initialize();
+		flags = ft_initialize(fd);
 		if (!str[i])
 			break ;
 		else if (str[i] != '%')
-			count = count + ft_putchar(str[i]);
+			count = count + ft_putchar_fd(str[i], fd);
 		else if (str[i] == '%' && str[i + 1])
 		{
 			i = ft_parse(str, ++i, &flags, args);
 			if (ft_isconversion(str[i]))
 				count = count + ft_handling((char)flags.type, flags, args);
 			else if (str[i])
-				count = count + ft_putchar(str[i]);
+				count = count + ft_putchar_fd(str[i], fd);
 		}
 		i++;
 	}

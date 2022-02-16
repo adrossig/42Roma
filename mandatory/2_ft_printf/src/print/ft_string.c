@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_string.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:13:51 by adrossig          #+#    #+#             */
-/*   Updated: 2021/11/03 18:00:49 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/16 10:50:15 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,21 @@ static int	ft_input(char *str, t_flags flags)
 	if (flags.dot >= 0)
 	{
 		count = count + ft_width(flags.dot, ft_strlen(str), 0);
-		count = count + ft_putsp(str, flags.dot);
+		count = count + ft_putsp(str, flags.dot, flags.fd);
 	}
 	else
-		count = count + ft_putsp(str, ft_strlen(str));
+		count = count + ft_putsp(str, ft_strlen(str), flags.fd);
 	return (count);
 }
 
+/**
+ * Prints a string to the console.
+ *
+ * @param str The string to print.
+ * @param flags The formatting flags.
+ *
+ * @returns The number of characters printed.
+ */
 int	ft_string(char *str, t_flags flags)
 {
 	int	count;

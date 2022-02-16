@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pointer.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:11:59 by adrossig          #+#    #+#             */
-/*   Updated: 2021/11/09 19:08:05 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/16 10:50:53 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,24 @@ static int	ft_input(char *pointer, t_flags flags)
 	int	count;
 
 	count = 0;
-	count = count + ft_putsp("0x", 2);
+	count = count + ft_putsp("0x", 2, flags.fd);
 	if (flags.dot >= 0)
 	{
 		count = count + ft_width(flags.dot, ft_strlen(pointer), 1);
-		count = count + ft_putsp(pointer, flags.dot);
+		count = count + ft_putsp(pointer, flags.dot, flags.fd);
 	}
 	else
-		count = count + ft_putsp(pointer, ft_strlen(pointer));
+		count = count + ft_putsp(pointer, ft_strlen(pointer), flags.fd);
 	return (count);
 }
 
+/**
+ * Prints a string to the console.
+ *
+ * @param str The string to print.
+ *
+ * @returns None
+ */
 int	ft_pointer(unsigned long long num, t_flags flags)
 {
 	int		count;
@@ -38,9 +45,9 @@ int	ft_pointer(unsigned long long num, t_flags flags)
 	{
 		if (flags.width >= 0 && flags.minus == 0)
 			count += (ft_width(flags.width - 2, 0, 0) || 1)
-				+ (ft_putsp("0x", 2) || 1);
+				+ (ft_putsp("0x", 2, flags.fd) || 1);
 		else
-			count += (ft_putsp("0x", 2) || 1)
+			count += (ft_putsp("0x", 2, flags.fd) || 1)
 				+ (ft_width(flags.width - 2, 0, 0) || 1);
 		return (count);
 	}

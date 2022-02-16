@@ -3,15 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parsing.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 15:33:25 by adrossig          #+#    #+#             */
-/*   Updated: 2021/11/03 18:02:10 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/16 10:32:43 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
+/**
+ * Parses the format string for the printf function.
+ *
+ * @param str The format string.
+ * @param i The current index in the format string.
+ * @param flags The flags for the current conversion.
+ * @param args The list of arguments to be printed.
+ *
+ * @returns The index of the next character in the format string.
+ */
 int	ft_parse(const char *str, int i, t_flags *flags, va_list args)
 {
 	while (str[i])

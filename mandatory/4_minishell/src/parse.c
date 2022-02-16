@@ -6,7 +6,7 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 10:06:51 by arossign          #+#    #+#             */
-/*   Updated: 2022/02/11 22:54:38 by arossign         ###   ########.fr       */
+/*   Updated: 2022/02/16 00:27:22 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,14 @@ static char	**split_all(char **args, t_prompt *prompt)
 	return (args);
 }
 
+/**
+ * Parses the arguments of the shell.
+ *
+ * @param args The arguments of the shell.
+ * @param p The prompt struct.
+ *
+ * @returns The prompt struct.
+ */
 static void	*parse_args(char **args, t_prompt *p)
 {
 	int	is_exit;

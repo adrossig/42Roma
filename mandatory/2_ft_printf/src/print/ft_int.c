@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_int.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:10:53 by adrossig          #+#    #+#             */
-/*   Updated: 2021/11/03 17:56:11 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/16 10:52:36 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	ft_input(char *str, int num, t_flags flags)
 
 	count = 0;
 	if (flags.dot >= 0 && num < 0 && num != -2147483648)
-		ft_putchar('-');
+		ft_putchar_fd('-', flags.fd);
 	if (flags.dot >= 0)
 		count = count + ft_width(flags.dot - 1, ft_strlen(str) - 1, 1);
 	count = count + ft_putsp(str, ft_strlen(str));
@@ -46,6 +46,14 @@ static int	ft_put_int(char *str, int num, t_flags flags)
 	return (count);
 }
 
+/**
+ * Prints an integer to the console.
+ *
+ * @param i The integer to print.
+ * @param flags The flags to use when printing the integer.
+ *
+ * @returns The number of characters printed.
+ */
 int	ft_int(int i, t_flags flags)
 {
 	int		count;
@@ -62,7 +70,7 @@ int	ft_int(int i, t_flags flags)
 	if (i < 0 && (flags.dot >= 0 || flags.zero == 1) && num != -2147483648)
 	{
 		if (flags.dot <= -1 && flags.zero == 1)
-			ft_putsp("-", 1);
+			ft_putsp("-", 1, flags.fd);
 		i *= -1;
 		flags.zero = 1;
 		flags.width--;
