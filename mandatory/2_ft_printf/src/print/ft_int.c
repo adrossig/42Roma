@@ -6,7 +6,7 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:10:53 by adrossig          #+#    #+#             */
-/*   Updated: 2022/02/16 10:52:36 by arossign         ###   ########.fr       */
+/*   Updated: 2022/02/16 11:01:23 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@ static int	ft_input(char *str, int num, t_flags flags)
 	if (flags.dot >= 0 && num < 0 && num != -2147483648)
 		ft_putchar_fd('-', flags.fd);
 	if (flags.dot >= 0)
-		count = count + ft_width(flags.dot - 1, ft_strlen(str) - 1, 1);
-	count = count + ft_putsp(str, ft_strlen(str));
+		count = count + ft_width(flags.dot - 1, ft_strlen(str) - 1, 1, \
+		flags.fd);
+	count = count + ft_putsp(str, ft_strlen(str), flags.fd);
 	return (count);
 }
 
@@ -37,10 +38,11 @@ static int	ft_put_int(char *str, int num, t_flags flags)
 	if (flags.dot >= 0)
 	{
 		flags.width -= flags.dot;
-		count = count + ft_width(flags.width, 0, 0);
+		count = count + ft_width(flags.width, 0, 0, flags.fd);
 	}
 	else
-		count = count + ft_width(flags.width, ft_strlen(str), flags.zero);
+		count = count + ft_width(flags.width, ft_strlen(str), flags.zero, \
+		flags.fd);
 	if (flags.minus == 0)
 		count = count + ft_input(str, num, flags);
 	return (count);
@@ -64,7 +66,7 @@ int	ft_int(int i, t_flags flags)
 	num = i;
 	if (flags.dot == 0 && i == 0)
 	{
-		count = count + ft_width(flags.width, 0, 0);
+		count = count + ft_width(flags.width, 0, 0, flags.fd);
 		return (count);
 	}
 	if (i < 0 && (flags.dot >= 0 || flags.zero == 1) && num != -2147483648)

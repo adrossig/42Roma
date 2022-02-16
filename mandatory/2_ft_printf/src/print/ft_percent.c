@@ -6,7 +6,7 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:04:56 by adrossig          #+#    #+#             */
-/*   Updated: 2022/02/16 10:51:08 by arossign         ###   ########.fr       */
+/*   Updated: 2022/02/16 10:57:50 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_percent(t_flags flags)
 	count = 0;
 	if (flags.minus == 1)
 		count = count + ft_putsp("%", 1, flags.fd);
-	count = count + ft_width(flags.width, 1, flags.zero);
+	count = count + ft_width(flags.width, 1, flags.zero, flags.fd);
 	if (flags.minus == 0)
 		count = count + ft_putsp("%", 1, flags.fd);
 	return (count);

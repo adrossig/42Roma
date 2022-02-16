@@ -6,7 +6,7 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 12:34:49 by adrossig          #+#    #+#             */
-/*   Updated: 2022/02/16 10:42:01 by arossign         ###   ########.fr       */
+/*   Updated: 2022/02/16 10:55:02 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_printf(const char *format, ...)
 	if (!str)
 		return (0);
 	va_start(args, format);
-	count += ft_handling_input(str, args);
+	count += ft_handling_input(str, args, 1);
 	va_end(args);
 	free((char *)str);
 	return (count);

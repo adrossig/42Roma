@@ -6,7 +6,7 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:01:16 by adrossig          #+#    #+#             */
-/*   Updated: 2022/02/16 10:48:17 by arossign         ###   ########.fr       */
+/*   Updated: 2022/02/16 10:58:44 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
  *
  * @returns None
  */
-int	ft_width(int width, int minus, int zero)
+int	ft_width(int width, int minus, int zero, int fd)
 {
 	int	count;
 
@@ -28,9 +28,9 @@ int	ft_width(int width, int minus, int zero)
 	while (width > minus)
 	{
 		if (zero)
-			ft_putchar_fd('0', flags.fd);
+			ft_putchar_fd('0', fd);
 		else
-			ft_putchar_fd(' ', flags.fd);
+			ft_putchar_fd(' ', fd);
 		width -= 1;
 		count++;
 	}
