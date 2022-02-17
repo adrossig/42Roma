@@ -6,7 +6,7 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 14:58:43 by arossign          #+#    #+#             */
-/*   Updated: 2022/02/11 22:51:10 by arossign         ###   ########.fr       */
+/*   Updated: 2022/02/16 11:29:42 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
  *
  * @returns NULL.
 **/
-void	*error(t_prompt *prompt, int err_type, char *param, int errno)
+void	*my_error(t_prompt *prompt, int err_type, char *param, int err_no)
 {
 	prompt->e_status = errno;
 	if (err_type == QUOTE)

@@ -9,6 +9,10 @@ END_COLOR=\$(COLOR_PREFIX)[0m
 # Defines the C Compiler
 CC := gcc
 
+# Path of libraries Libft
+LIBFT = $(LIBDIR)/libft
+LIBFT_PATH = $(LIBFT)/libft.a
+
 # Dependency libraries
 LIBS := -I$(LIBFT)
 
@@ -22,21 +26,17 @@ DEBUG := -g3 -DDEBUG=1
 BINDIR := bin
 SRCDIR := src
 LOGDIR := log
-LIBDIR := lib
+LIBDIR := libs
 TESTDIR := test
 
-# Path of libraries Libft
-LIBFT = $(LIBDIR)/libft
-LIBFT_PATH = $(LIBFT)/libft.a
-
 # Source code file extension
-BUILTIN := c
-
-SRCEXT := $(addprefix builtin/, $(BUILTIN))
+BUILTIN := signal.c readline.c parse.c nodes.c my_trim.c \
+			my_subsplit.c main.c get_param.c expander.c \
+			error.c cmd_trim.c
 
 # %.o file names
-NAMES := $(addprefix src/, $(SRCEXT))
-OBJECTS := $(SRC:%.c=%.o)
+NAMES := $(addprefix src/, $(BUILTIN))
+OBJECTS := $(NAMES:%.c=%.o)
 
 #
 # COMPILATION RULES
@@ -59,6 +59,7 @@ help:
 
 # Rule for link and generate the binary file
 all: $(OBJECTS)
+	make all -C $(LIBFT)/
 	@echo -en "$(BROWN)LD $(END_COLOR)";
 	$(CC) -o $+ $(DEBUG) $(CFLAGS) $(LIBS)
 

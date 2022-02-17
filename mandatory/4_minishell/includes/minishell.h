@@ -6,7 +6,7 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 14:55:54 by arossign          #+#    #+#             */
-/*   Updated: 2022/02/10 10:03:25 by arossign         ###   ########.fr       */
+/*   Updated: 2022/02/16 11:34:37 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,14 @@
 # include "../libs/libft/includes/libft.h"
 # include "colors.h"
 
+// Local defines
+# define READ_END 0
+# define WRITE_END 1
+
 typedef struct s_prompt
 {
 	t_list	*cmds;
-	char	**envp;
+	char	**env;
 	pid_t	pid;
 	int	e_status;
 }		t_prompt;
@@ -85,6 +89,6 @@ void	handle_sigint_child(int sig);
 /* Function to handle SIGQUIT signals for child process */
 void	handle_sigquit(int sig);
 
-void	*perror(t_prompt *prompt, int err_type, char *param, int errno);
-
+//void	*my_perror(t_prompt *prompt, int err_type, char *param, int errno);
+void	*my_error(t_prompt *prompt, int err_type, char *param, int err_no);
 #endif

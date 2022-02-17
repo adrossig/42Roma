@@ -6,11 +6,13 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 15:02:04 by arossign          #+#    #+#             */
-/*   Updated: 2022/02/11 22:55:08 by arossign         ###   ########.fr       */
+/*   Updated: 2022/02/16 11:29:56 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
+
+int	g_fds[2][2];
 
 void	my_readline_bis(t_prompt *prompt, char *str, char *output, int isNull)
 {
@@ -49,17 +51,17 @@ char	*my_readline(t_prompt *prompt, char *str)
 		return (NULL);
 	pid = fork();
 	if (pid == -1)
-		error(prompt, FORKERROR, NULL, 1);
+		my_error(prompt, FORKERR, NULL, 1);
 	if (!pid)
 		my_readline_bis(prompt, str, output, isNull);
-	close(g_fds[0][WRITTE_END]);
-	close(g_fds[1][WRITTE_END]);
+	close(g_fds[0][WRITE_END]);
+	close(g_fds[1][WRITE_END]);
 	waitpid(pid, &isNull, 0);
 	output = get_next_line(g_fds[0][READ_END]);
 	if (!isNull && !output)
 		output = ft_strdup("");
 	read(g_fds[1][READ_END], &prompt->e_status, sizeof(int));
-	close(g_fds[0]READ_END);
-	close(g_fds[1][READ_END]);p
+	close(g_fds[0][READ_END]);
+	close(g_fds[1][READ_END]);
 	return (output);
 }

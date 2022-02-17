@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 15:46:39 by adrossig          #+#    #+#             */
-/*   Updated: 2021/11/02 19:28:11 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/02/16 11:32:28 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@
 # include <stddef.h>
 # include <stdarg.h>
 # include <wchar.h>
+# include <limits.h>
 
 # include "ft_array.h"
 # include "ft_dict.h"
@@ -53,5 +54,6 @@
 # include "ft_crypt.h"
 # include "ft_number.h"
 # include "ft_wchar.h"
+# include "get_next_line.h"
 
 #endif

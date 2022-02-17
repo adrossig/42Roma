@@ -6,7 +6,7 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 10:06:51 by arossign          #+#    #+#             */
-/*   Updated: 2022/02/16 00:27:22 by arossign         ###   ########.fr       */
+/*   Updated: 2022/02/16 11:34:50 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,8 +103,8 @@ void	*check_args(char *out, t_prompt *p)
 	if (p && p->cmds)
 		n = p->cmds->content;
 	if (p && p->cmds && n && n->full_cmd && ft_lstsize(p->cmds) == 1)
-		p->envp = set_env("_", n->full_cmd[ft_matrixlen(n->full_cmd) - 1], \
-			p->envp, 1);
+		p->env = set_env("_", n->full_cmd[ft_matrixlen(n->full_cmd) - 1], \
+			p->env, 1);
 	if (p && p->cmds)
 		ft_lstclear(&p->cmds, free_content);
 	return (p);

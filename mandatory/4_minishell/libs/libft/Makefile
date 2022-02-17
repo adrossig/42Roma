@@ -81,6 +81,8 @@ NUMBER := ft_intlen.c ft_uintlen.c ft_hexintlen.c ft_long_hexintlen.c
 WCHAR :=	ft_putwchar.c ft_putwchar_fd.c ft_putwstrn.c ft_putwstr_fd.c ft_wstrlen.c \
 			ft_wchar_len.c
 
+GNL := get_next_line.c
+
 FILES := $(addprefix char/, $(CHAR)) \
 	$(addprefix conv/, $(CONV)) \
 	$(addprefix lst/, $(LST)) \
@@ -96,6 +98,7 @@ FILES := $(addprefix char/, $(CHAR)) \
 	$(addprefix number/, $(NUMBER)) \
 	$(addprefix array/, $(ARRAY)) \
 	$(addprefix wchar/, $(WCHAR)) \
+	$(addprefix gnl/, $(GNL)) \
 
 SRC := $(addprefix src/, $(FILES))
 OBJ := $(SRC:%.c=%.o)
