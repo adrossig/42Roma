@@ -22,7 +22,7 @@ Fixed::Fixed(int const n)
 Fixed::Fixed(float const n)
 {
 	std::cout << "\e[0;33mFloat Constructor called of Fixed\e[0m" << std::endl;
-	this->_num = roundf(n * Power(2, (this->_bit)));
+	this->_num = roundf(n * (1 << this->_bit)));
 }
 
 // Destructor
@@ -52,7 +52,7 @@ void Fixed::setRawBits(int const raw)
 
 float Fixed::toFloat(void) const
 {
-	return ((float)this->_num * ( -(this->_bit)));
+	return ((float)this->_num * (1 << -(this->_bit)));
 }
 
 int Fixed::toInt(void) const
