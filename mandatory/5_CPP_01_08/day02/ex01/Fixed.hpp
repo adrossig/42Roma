@@ -18,11 +18,12 @@ class Fixed
 		~Fixed();
 
 		// Operators
-		Fixed &operator=(const Fixed &assign);
 		int getRawBits(void) const;
 		void setRawBits(int const raw);
 		float toFloat(void) const;
 		int toInt(void) const;
+
+		Fixed &operator=(const Fixed &assign);
 
 	private:
 		static const int _bit = 8;
