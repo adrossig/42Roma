@@ -6,11 +6,11 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 15:17:37 by arossign          #+#    #+#             */
-/*   Updated: 2022/02/11 22:54:14 by arossign         ###   ########.fr       */
+/*   Updated: 2022/03/14 10:29:19 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minishell.h"
+#include "../../includes/minishell.h"
 
 /**
  * Counts the number of words in a string.

@@ -6,7 +6,7 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 10:10:57 by arossign          #+#    #+#             */
-/*   Updated: 2022/02/11 22:55:15 by arossign         ###   ########.fr       */
+/*   Updated: 2022/03/14 10:49:37 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static int	malloc_len(char const *s1)
  *
  * @returns The trimmed string.
  */
-char	*ft_strtrim_all(char const *s1, int squote, int dquote)
+char	*my_strtrim(char const *s1, int squote, int dquote)
 {
 	int		count;
 	int		i[2];

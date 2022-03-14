@@ -17,7 +17,7 @@ LIBFT_PATH = $(LIBFT)/libft.a
 LIBS := -I$(LIBFT)
 
 # Flags for compiling
-CFLAGS := -Werror -Wall -Wextra -g -g3
+CFLAGS := -Werror -Wall -Wextra -g -g3 -MD
 
 # Debug options
 DEBUG := -g3 -DDEBUG=1
@@ -30,9 +30,12 @@ LIBDIR := libs
 TESTDIR := test
 
 # Source code file extension
-BUILTIN := signal.c readline.c parse.c nodes.c my_trim.c \
-			my_subsplit.c main.c get_param.c expander.c \
-			error.c cmd_trim.c
+BUILTIN := builtins/buitlins.c builtins/cd.c builtins/echo.c builtins/pwd.c \
+			env/env.c env/export.c env/getenv.c env/setenv.c env/unset.c \
+			getters/get_cmd.c getters/get_params.c \
+			utils/my_subsplit.c utils/my_trim.c utils/utils.c utils/ft_atoi2.c \
+			cmd_trim.c custom_cmd.c error.c expander.c heredoc.c main.c \
+			nodes.c parse.c prompt.c signal.c
 
 # %.o file names
 NAMES := $(addprefix src/, $(BUILTIN))
@@ -61,7 +64,7 @@ help:
 all: $(OBJECTS)
 	make all -C $(LIBFT)/
 	@echo -en "$(BROWN)LD $(END_COLOR)";
-	$(CC) -o $+ $(DEBUG) $(CFLAGS) $(LIBS)
+	$(CC) -lreadline -L .brew/opt/readline/lib -I .brew/opt/readline/include -o $+ $(DEBUG) $(CFLAGS) $(LIBS)
 
 # Rule for run valgrind tool
 valgrind:

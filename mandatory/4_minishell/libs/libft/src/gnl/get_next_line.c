@@ -6,7 +6,7 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 11:00:56 by arossign          #+#    #+#             */
-/*   Updated: 2022/01/11 11:00:57 by arossign         ###   ########.fr       */
+/*   Updated: 2022/03/14 09:46:50 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static char	*putinline_final(char **saved_fd, char *line)
 		*saved_fd = ft_free(*saved_fd);
 		return (*saved_fd);
 	}
-	line = str_dup(*saved_fd);
+	line = ft_strdup(*saved_fd);
 	if (!line)
 	{
 		if (*saved_fd)
@@ -52,7 +52,7 @@ static char	*putinline(char **saved_fd)
 		line = sub_str((*saved_fd), i + 1);
 		if (!line)
 			return (ft_free(line));
-		temp = str_dup(&(*saved_fd)[i + 1]);
+		temp = ft_strdup(&(*saved_fd)[i + 1]);
 		if (!temp)
 			return (ft_free(temp));
 		free(*saved_fd);
@@ -73,13 +73,13 @@ static int	gnl_loop(char **saved, char *buf, int fd, int ret)
 	{
 		if (!buf[0])
 			return (-1);
-		saved[fd] = str_dup(buf);
+		saved[fd] = ft_strdup(buf);
 		if (!saved[fd])
 			return (-1);
 	}
 	else
 	{
-		tmp = str_join(saved[fd], buf);
+		tmp = ft_strjoin(saved[fd], buf);
 		if (!tmp)
 		{
 			free(tmp);
@@ -105,7 +105,7 @@ char	*get_next_line(int fd)
 		ret = gnl_loop(saved, buf, fd, ret);
 		if (ret == -1)
 			return (NULL);
-		if (str_chr(saved[fd], '\n'))
+		if (ft_strchr(saved[fd], '\n'))
 			break ;
 	}
 	return (putinline(&saved[fd]));

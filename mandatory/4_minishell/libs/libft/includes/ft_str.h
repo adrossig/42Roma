@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_str.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 10:43:59 by adrossig          #+#    #+#             */
-/*   Updated: 2021/11/08 16:30:50 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/03/14 10:35:56 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include "libft.h"
 
 int		ft_strilen(const char *str);
+int		ft_strchsep(const char *s, char *set);
+int		ft_strchr_index(const char *s, int c);
 int		ft_strequ(const char *s1, const char *s2);
 int		ft_strcmp(const char *str1, const char *str2);
 int		ft_strnequ(const char *s1, const char *s2, size_t n);
@@ -51,4 +53,5 @@ size_t	ft_strnlen(const char *s, char c);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 size_t	ft_strlenz(char *str);
+
 #endif

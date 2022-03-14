@@ -72,7 +72,8 @@ STR :=	ft_strcat.c ft_strchr.c ft_strclr.c ft_strcmp.c ft_strcpy.c \
 		ft_strncat.c ft_strncmp.c ft_strncpy.c ft_strndup.c ft_strnequ.c \
 		ft_strnew.c ft_strnstr.c ft_strrchr.c ft_split.c ft_substr.c \
 		ft_strtrim.c ft_strlcpy.c ft_strfree.c ft_strnlen.c \
-		ft_strrev.c ft_tolower_str.c ft_toupper_str.c
+		ft_strrev.c ft_tolower_str.c ft_toupper_str.c ft_strchr_index.c \
+		ft_strchsep.c
 
 VECTOR := ft_vector_base.c ft_vector_insert.c ft_vector_delete.c
 
@@ -81,7 +82,10 @@ NUMBER := ft_intlen.c ft_uintlen.c ft_hexintlen.c ft_long_hexintlen.c
 WCHAR :=	ft_putwchar.c ft_putwchar_fd.c ft_putwstrn.c ft_putwstr_fd.c ft_wstrlen.c \
 			ft_wchar_len.c
 
-GNL := get_next_line.c
+GNL := get_next_line.c gnl_util.c
+
+MATRIX := ft_extend_matrix.c ft_free_matrix.c ft_matrix_len.c ft_matrix_replace_in.c \
+			ft_matrix_putfd.c ft_dup_matrix.c
 
 FILES := $(addprefix char/, $(CHAR)) \
 	$(addprefix conv/, $(CONV)) \
@@ -99,6 +103,7 @@ FILES := $(addprefix char/, $(CHAR)) \
 	$(addprefix array/, $(ARRAY)) \
 	$(addprefix wchar/, $(WCHAR)) \
 	$(addprefix gnl/, $(GNL)) \
+	$(addprefix matrix/, $(MATRIX)) \
 
 SRC := $(addprefix src/, $(FILES))
 OBJ := $(SRC:%.c=%.o)

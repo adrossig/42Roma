@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   env.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 16:54:18 by arossign          #+#    #+#             */
-/*   Updated: 2022/02/17 16:54:19 by arossign         ###   ########.fr       */
+/*   Created: 2022/03/13 17:42:48 by arossign          #+#    #+#             */
+/*   Updated: 2022/03/14 09:57:55 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minishell.h"
+#include "../../includes/minishell.h"
 
-extern int g_fds[2][2];
-
-int	ft_strchars_i(char *str, char *set)
+int	env(char *av, char **env, int i[2])
 {
-	int i;
+	int pos;
 
-	i = 0;
-	while (*(str + i))
+	i[1] = 0;
+	pos = ft_strchr_index(av, '=');\
+	if (pos == -1)
+		return (-1);
+	while (env[i[1]])
 	{
-		if (ft_strchr(str, set[i]))
-			return (i);
-		i++;
+		if (!ft_strncmp(env[i[1]], av, pos + 1))
+			return (1);
+		i[1]++;
 	}
-	return (-1);
+	return (0);
 }

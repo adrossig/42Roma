@@ -6,11 +6,13 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 14:58:43 by arossign          #+#    #+#             */
-/*   Updated: 2022/02/16 11:29:42 by arossign         ###   ########.fr       */
+/*   Updated: 2022/03/14 10:30:52 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
+
+extern int g_status;
 
 /**
  * Prints an error message to stderr.
@@ -22,9 +24,9 @@
  *
  * @returns NULL.
 **/
-void	*my_error(t_prompt *prompt, int err_type, char *param, int err_no)
+void	*error(int err_type, char *param, int err)
 {
-	prompt->e_status = errno;
+	g_status = err;
 	if (err_type == QUOTE)
 		ft_putstr_fd("minishell: error while looking for matching quote\n", 2);
 	else if (err_type == NDIR)
@@ -49,4 +51,70 @@ void	*my_error(t_prompt *prompt, int err_type, char *param, int err_no)
 		ft_putstr_fd("minishell: Not a directory: ", 2);
 	ft_putendl_fd(param, 2);
 	return (NULL);
+}
+
+int	minishell_exit(t_list *cmd, int *is_exit)
+{
+	t_mini	*node;
+	long	status[2];
+
+	node = cmd->content;
+	*is_exit = !cmd->next;
+	if (*is_exit)
+		ft_putstr_fd("exit\n", 2);
+	if (!node->full_cmd || !node->full_cmd[1])
+		return (0);
+	status[1] = ft_atoi2(node->full_cmd[1], &status[0]);
+	if (status[1] == -1)
+	{
+		ft_putstr_fd("minishell: exit: ", 2);
+		ft_putstr_fd(node->full_cmd[1], 2);
+		ft_putstr_fd(": numeric argument required\n", 2);
+		return (255);
+	}
+	else if (node->full_cmd[2])
+	{
+		*is_exit = 0;
+		ft_putstr_fd("minishell: exit: too many arguments\n", 2);
+		return (1);
+	}
+	status[0] %= 256 + 256 * (status[0] < 0);
+	return (status[0]);
+}
+
+DIR	*cd_error(char **str[2])
+{
+	DIR		*dir;
+
+	dir = NULL;
+	if (str[0][1])
+		dir = opendir(str[0][1]);
+	if (!str[0][1] && str[1][0] && !str[1][0][0])
+	{
+		g_status = 1;
+		ft_putstr_fd("minishell: HOME not set\n", 2);
+	}
+	if (str[1][0] && !str[0][1])
+		g_status = chdir(str[1][0]) == -1;
+	if (str[0][1] && dir && access(str[0][1], F_OK) != -1)
+		chdir(str[0][1]);
+	else if (str[0][1] && access(str[0][1], F_OK) == -1)
+		error(NDIR, str[0][1], 1);
+	else if (str[0][1])
+		error(NOT_DIR, str[0][1], 1);
+	return (dir);
+}
+
+void	free_content(void *content)
+{
+	t_mini	*node;
+
+	node = content;
+	ft_free_matrix(&node->full_cmd);
+	free(node->full_path);
+	if (node->infile != STDIN_FILENO)
+		close(node->infile);
+	if (node->outfile != STDOUT_FILENO)
+		close(node->outfile);
+	free(node);
 }

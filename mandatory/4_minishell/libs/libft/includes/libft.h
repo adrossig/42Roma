@@ -6,7 +6,7 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 15:46:39 by adrossig          #+#    #+#             */
-/*   Updated: 2022/02/16 11:32:28 by arossign         ###   ########.fr       */
+/*   Updated: 2022/03/14 09:40:03 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,6 @@
 # include "ft_number.h"
 # include "ft_wchar.h"
 # include "get_next_line.h"
+# include "ft_matrix.h"
 
 #endif

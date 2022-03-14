@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 15:33:30 by adrossig          #+#    #+#             */
-/*   Updated: 2021/05/26 16:46:51 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/03/14 10:21:25 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,15 @@ void	ft_putendl_fd(const char *s, int fd)
 		return ;
 	ft_putstr_fd(s, fd);
 	ft_putchar_fd('\n', fd);
+}
+
+int	ft_putendl_fd2(char *s, int fd)
+{
+	if (s != NULL)
+	{
+		ft_putstr_fd(s, fd);
+		ft_putchar_fd('\n', fd);
+		return ((int)ft_strlen(s) + 1);
+	}
+	return (0);
 }

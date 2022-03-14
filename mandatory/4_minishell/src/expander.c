@@ -6,11 +6,13 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 10:15:22 by arossign          #+#    #+#             */
-/*   Updated: 2022/02/11 22:47:47 by arossign         ###   ########.fr       */
+/*   Updated: 2022/03/14 10:37:55 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
+
+extern int g_status;
 
 char	*expand_path(char *str, int i, int quotes[2], char *var)
 {
@@ -47,18 +49,17 @@ static char	*get_substr_var(char *str, int i, t_prompt *prompt)
 	int		pos;
 	char	*path;
 	char	*var;
-	/* strchars_i Looks for a specific set of chars inside a given string,
-	* returning its index */
-	pos = ft_strchars_i(&str[i], "|\"\'$?>< ") + (ft_strchr("$?", str[i]) != 0);
+
+	pos = ft_strchsep(&str[i], "|\"\'$?>< ") + (ft_strchr("$?", str[i]) != 0);
 	if (pos == -1)
 		pos = ft_strlen(str) - 1;
 	aux = ft_substr(str, 0, i - 1);
-	var = mini_getenv(&str[i], prompt->envp, \
-		ft_strchars_i(&str[i], "\"\'$|>< "));
+	var = minishell_getenv(&str[i], prompt->env, \
+		ft_strchsep(&str[i], "\"\'$|>< "));
 	if (!var && str[i] == '$')
 		var = ft_itoa(prompt->pid);
 	else if (!var && str[i] == '?')
-		var = ft_itoa(prompt->e_status);
+		var = ft_itoa(g_status);
 	path = ft_strjoin(aux, var);
 	free(aux);
 	aux = ft_strjoin(path, &str[i + pos]);
@@ -87,8 +88,8 @@ char	*expand_vars(char *str, int i, int quotes[2], t_prompt *prompt)
 		quotes[0] = (quotes[0] + (!quotes[1] && str[i] == '\'')) % 2;
 		quotes[1] = (quotes[1] + (!quotes[0] && str[i] == '\"')) % 2;
 		if (!quotes[0] && str[i] == '$' && str[i + 1] && \
-			((ft_strchars_i(&str[i + 1], "/~%^{}:; ") && !quotes[1]) || \
-			(ft_strchars_i(&str[i + 1], "/~%^{}:;\"") && quotes[1])))
+			((ft_strchsep(&str[i + 1], "/~%^{}:; ") && !quotes[1]) || \
+			(ft_strchsep(&str[i + 1], "/~%^{}:;\"") && quotes[1])))
 			return (expand_vars(get_substr_var(str, ++i, prompt), -1, \
 				quotes, prompt));
 	}
