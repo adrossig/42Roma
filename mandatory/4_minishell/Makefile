@@ -14,7 +14,9 @@ LIBFT = $(LIBDIR)/libft
 LIBFT_PATH = $(LIBFT)/libft.a
 
 # Dependency libraries
-LIBS := -I$(LIBFT)
+INCDIR := includes
+LIBS := -I$(LIBFT) -I$(INCDIR)
+LDFLAGS = -L$(LIBFT) -lft
 
 # Flags for compiling
 CFLAGS := -Werror -Wall -Wextra -g -g3 -MD
@@ -29,6 +31,7 @@ LOGDIR := log
 LIBDIR := libs
 TESTDIR := test
 
+
 # Source code file extension
 BUILTIN := builtins/buitlins.c builtins/cd.c builtins/echo.c builtins/pwd.c \
 			env/env.c env/export.c env/getenv.c env/setenv.c env/unset.c \
@@ -39,7 +42,7 @@ BUILTIN := builtins/buitlins.c builtins/cd.c builtins/echo.c builtins/pwd.c \
 
 # %.o file names
 NAMES := $(addprefix src/, $(BUILTIN))
-OBJECTS := $(NAMES:%.c=%.o)
+OBJECTS := $(NAMES:.c=.o)
 
 #
 # COMPILATION RULES
@@ -61,10 +64,14 @@ help:
 
 
 # Rule for link and generate the binary file
-all: $(OBJECTS)
-	make all -C $(LIBFT)/
-	@echo -en "$(BROWN)LD $(END_COLOR)";
-	$(CC) -lreadline -L .brew/opt/readline/lib -I .brew/opt/readline/include -o $+ $(DEBUG) $(CFLAGS) $(LIBS)
+all: $(NAME)
+
+$(NAME): $(LIBFT_PATH) $(OBJECTS)
+	@echo -en "$(BROWN) $(END_COLOR)";
+	$(CC) $(OBJECTS) $(DEBUG) $(CFLAGS) $(LIBS) $(LDFLAGS) -lreadline -o $@
+
+$(LIBFT_PATH):
+	@make -C $(LIBFT)
 
 # Rule for run valgrind tool
 valgrind:
@@ -81,6 +88,7 @@ valgrind:
 clean:
 	@echo "Deleting all the binaries files..."
 	@rm -rvf $(OBJECTS)
+	@rm -rvf *.d
 
 # Rule for cleaning the project
 fclean: clean

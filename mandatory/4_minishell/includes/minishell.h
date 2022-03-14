@@ -177,4 +177,6 @@ int		get_fd(int oldfd, char *path, int flags[2]);
 int		env(char *av, char **env, int i[2]);
 int	ft_atoi2(const char *nptr, long *nbr);
 
+void    rl_replace_line(const char *text, int clear_undo);
+
 #endif

@@ -95,3 +95,5 @@ char	*expand_vars(char *str, int i, int quotes[2], t_prompt *prompt)
 	}
 	return (str);
 }
+ 
+ 

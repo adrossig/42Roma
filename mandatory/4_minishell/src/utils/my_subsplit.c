@@ -82,7 +82,7 @@ static char	**ft_fill_array(char **aux, char *str, char *set, int i[3])
  *
  * @returns An array of strings split by the delimiter.
  */
-char	**ft_cmdsubsplit(char const *s, char *set)
+char	**my_subsplit(char const *s, char *set)
 {
 	char	**aux;
 	int		number_words;
