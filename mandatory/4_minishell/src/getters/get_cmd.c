@@ -6,7 +6,7 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 22:48:39 by arossign          #+#    #+#             */
-/*   Updated: 2022/03/14 10:05:18 by arossign         ###   ########.fr       */
+/*   Updated: 2022/03/15 15:23:46 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void	get_cmd(t_prompt *prompt, t_list *cmd, char **s, char *path)
 
 void	*exec_cmd(t_prompt *prompt, t_list *cmd)
 {
-	int	d[2];
+	int fd[2];
 
 	get_cmd(prompt, cmd, NULL, NULL);
 	if (pipe(fd) == -1)
