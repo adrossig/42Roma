@@ -12,13 +12,13 @@
 
 #include "../../includes/minishell.h"
 
-extern int g_status;
+extern int	g_status;
 
 int	minishell_cd(t_prompt *prompt)
 {
-	char **str[2];
-	char *aux;
-	DIR	*dir;
+	char	**str[2];
+	char	*aux;
+	DIR		*dir;
 
 	g_status = 0;
 	str[0] = ((t_mini *)prompt->cmds->content)->full_cmd;

@@ -25,7 +25,8 @@ static int	ft_count_words(char *str, char *set, int count)
 		count++;
 		if (!ft_strchr(set, str[i]))
 		{
-			while ((!ft_strchr(set, str[i]) || mtx[0] || mtx[1]) && str[i] != '\0')
+			while ((!ft_strchr(set, str[i]) || mtx[0] || mtx[1]) && \
+				str[i] != '\0')
 			{
 				mtx[0] = (mtx[0] + (!mtx[1] && str[i] == '\'')) % 2;
 				mtx[1] = (mtx[1] + (!mtx[0] && str[i] == '\"')) % 2;
@@ -47,7 +48,7 @@ static int	ft_count_words(char *str, char *set, int count)
  * @param set The set of delimiters.
  *
  * @returns An array of strings.
- */
+**/
 static char	**ft_fill_array(char **aux, char *str, char *set, int i[3])
 {
 	int		mtx[2];
@@ -59,7 +60,8 @@ static char	**ft_fill_array(char **aux, char *str, char *set, int i[3])
 		i[1] = i[0];
 		if (!ft_strchr(set, str[i[0]]))
 		{
-			while ((!ft_strchr(set, str[i[0]]) || mtx[0] || mtx[1]) && str[i[0]])
+			while ((!ft_strchr(set, str[i[0]]) || mtx[0] || mtx[1]) && \
+				str[i[0]])
 			{
 				mtx[0] = (mtx[0] + (!mtx[1] && str[i[0]] == '\'')) % 2;
 				mtx[1] = (mtx[1] + (!mtx[0] && str[i[0]] == '\"')) % 2;
@@ -81,7 +83,7 @@ static char	**ft_fill_array(char **aux, char *str, char *set, int i[3])
  * @param set The delimiter to split the string by.
  *
  * @returns An array of strings split by the delimiter.
- */
+**/
 char	**my_subsplit(char const *s, char *set)
 {
 	char	**aux;

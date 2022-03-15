@@ -14,8 +14,8 @@
 
 static char	*find_cmd(char **env_path, char *cmd, char *full_path)
 {
-	char *tmp;
-	int i;
+	char	*tmp;
+	int		i;
 
 	i = -1;
 	full_path = NULL;
@@ -30,7 +30,7 @@ static char	*find_cmd(char **env_path, char *cmd, char *full_path)
 		if (!full_path)
 			return (NULL);
 		if (access(full_path, F_OK) == 0)
-			break;
+			break ;
 	}
 	if (!env_path || !env_path[i])
 	{
@@ -40,10 +40,10 @@ static char	*find_cmd(char **env_path, char *cmd, char *full_path)
 	return (full_path);
 }
 
-static DIR *cmd_checks(t_prompt *prompt, t_list *cmd, char ***str, char *path)
+static DIR	*cmd_checks(t_prompt *prompt, t_list *cmd, char ***str, char *path)
 {
-	t_mini *n;
-	DIR *dir;
+	t_mini	*n;
+	DIR		*dir;
 
 	dir = NULL;
 	n = cmd->content;
@@ -68,30 +68,32 @@ static DIR *cmd_checks(t_prompt *prompt, t_list *cmd, char ***str, char *path)
 	return (dir);
 }
 
-void get_cmd(t_prompt *prompt, t_list *cmd, char **s, char *path)
+void	get_cmd(t_prompt *prompt, t_list *cmd, char **s, char *path)
 {
-	t_mini *n;
-	DIR *dir;
+	t_mini	*n;
+	DIR		*dir;
 
 	n = cmd->content;
 	dir = cmd_checks(prompt, cmd, &s, path);
 	if (!is_builtin(n) && n && n->full_cmd && dir)
 		error(IS_DIR, *n->full_cmd, 126);
-	else if (!is_builtin(n) && n && n->full_path && access(n->full_path, F_OK) == -1)
+	else if (!is_builtin(n) && n && n->full_path && \
+		access(n->full_path, F_OK) == -1)
 		error(NDIR, n->full_path, 127);
-	else if (!is_builtin(n) && n && n->full_path && access(n->full_path, X_OK) == -1)
+	else if (!is_builtin(n) && n && n->full_path && \
+		access(n->full_path, X_OK) == -1)
 		error(NPERM, n->full_path, 126);
 	if (dir)
 		closedir(dir);
 	ft_free_matrix(&s);
 }
 
-void *exec_cmd(t_prompt *prompt, t_list *cmd)
+void	*exec_cmd(t_prompt *prompt, t_list *cmd)
 {
-	int fd[2];
+	int	d[2];
 
 	get_cmd(prompt, cmd, NULL, NULL);
-	if (pipe(fd) == - 1)
+	if (pipe(fd) == -1)
 		return (error(PIPERR, NULL, 1));
 	if (!check_fork(prompt, cmd, fd))
 		return (NULL);

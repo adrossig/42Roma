@@ -20,6 +20,7 @@ LDFLAGS = -L$(LIBFT) -lft
 
 # Flags for compiling
 CFLAGS := -Werror -Wall -Wextra -g -g3 -MD
+RLFLAGS = -lreadline -L /Users/$(USER)/.brew/opt/readline/lib -I /Users/$(USER)/.brew/opt/readline/include
 
 # Debug options
 DEBUG := -g3 -DDEBUG=1
@@ -68,7 +69,7 @@ all: $(NAME)
 
 $(NAME): $(LIBFT_PATH) $(OBJECTS)
 	@echo -en "$(BROWN) $(END_COLOR)";
-	$(CC) $(OBJECTS) $(DEBUG) $(CFLAGS) $(LIBS) $(LDFLAGS) -lreadline -o $@
+	$(CC) $(OBJECTS) $(DEBUG) $(CFLAGS) $(LIBS) $(LDFLAGS) -lreadline $(RLFLAGS``) -o $@
 
 $(LIBFT_PATH):
 	@make -C $(LIBFT)

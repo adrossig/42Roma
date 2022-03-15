@@ -12,11 +12,11 @@
 
 #include "../../includes/minishell.h"
 
-extern int g_status;
+extern int	g_status;
 
-int builtin(t_prompt *prompt, t_list *cmd, int *is_exist, int n)
+int	builtin(t_prompt *prompt, t_list *cmd, int *is_exist, int n)
 {
-	char **tmp;
+	char	**tmp;
 
 	while (cmd)
 	{
@@ -43,10 +43,9 @@ int builtin(t_prompt *prompt, t_list *cmd, int *is_exist, int n)
 	return (g_status);
 }
 
-
 int	is_builtin(t_mini *n)
 {
-	int nbr;
+	int	nbr;
 
 	if (!n->full_cmd)
 		return (0);

@@ -12,7 +12,7 @@
 
 #include "../includes/minishell.h"
 
-extern int g_status;
+extern int	g_status;
 
 /**
  * A function that forks a child process and waits for it to finish.
@@ -20,8 +20,8 @@ extern int g_status;
  * @param prompt The prompt to use when printing messages.
  *
  * @returns The pid of the child process.
- */
-static void get_pid(t_prompt *prompt)
+**/
+static void	get_pid(t_prompt *prompt)
 {
 	pid_t	pid;
 
@@ -50,7 +50,7 @@ static void get_pid(t_prompt *prompt)
  * @param env The environment variables.
  *
  * @returns The initialized prompt.
- */
+**/
 static t_prompt	init_vars(t_prompt prompt, char *str, char **av)
 {
 	char	*num;
@@ -77,6 +77,7 @@ static t_prompt	init_vars(t_prompt prompt, char *str, char **av)
 	free(str);
 	return (prompt);
 }
+
 /**
  * Initializes the prompt struct.
  *
@@ -84,7 +85,7 @@ static t_prompt	init_vars(t_prompt prompt, char *str, char **av)
  * @param env The environment variables.
  *
  * @returns The prompt struct.
- */
+**/
 static t_prompt	init_prompt(char **av, char **env)
 {
 	t_prompt	prompt;

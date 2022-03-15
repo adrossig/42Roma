@@ -12,7 +12,7 @@
 
 #include "../includes/minishell.h"
 
-extern int g_status;
+extern int	g_status;
 
 char	*expand_path(char *str, int i, int quotes[2], char *var)
 {
@@ -78,7 +78,7 @@ static char	*get_substr_var(char *str, int i, t_prompt *prompt)
  * @param prompt The prompt to use for variable expansion.
  *
  * @returns The expanded string.
-*/
+**/
 char	*expand_vars(char *str, int i, int quotes[2], t_prompt *prompt)
 {
 	quotes[0] = 0;
@@ -95,5 +95,3 @@ char	*expand_vars(char *str, int i, int quotes[2], t_prompt *prompt)
 	}
 	return (str);
 }
- 
- 

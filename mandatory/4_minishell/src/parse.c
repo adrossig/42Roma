@@ -12,7 +12,7 @@
 
 #include "../includes/minishell.h"
 
-extern int g_status;
+extern int	g_status;
 
 /**
  * Splits a string into an array of strings based on the delimiter.
@@ -21,7 +21,7 @@ extern int g_status;
  * @param delim The delimiter to split the string on.
  *
  * @returns An array of strings.
- */
+**/
 static char	**split_all(char **args, t_prompt *prompt)
 {
 	char	**subsplit;
@@ -82,7 +82,7 @@ static void	*parse_args(char **args, t_prompt *p)
  * @param p The prompt of the shell.
  *
  * @returns The parsed arguments.
- */
+**/
 void	*check_args(char *out, t_prompt *p)
 {
 	char	**a;
@@ -105,8 +105,8 @@ void	*check_args(char *out, t_prompt *p)
 	if (p && p->cmds)
 		n = p->cmds->content;
 	if (p && p->cmds && n && n->full_cmd && ft_lstsize(p->cmds) == 1)
-		p->env = minishell_setenv("_", n->full_cmd[ft_matrixlen(n->full_cmd) - 1], \
-			p->env, 1);
+		p->env = minishell_setenv("_", \
+		n->full_cmd[ft_matrixlen(n->full_cmd) - 1], p->env, 1);
 	if (p && p->cmds)
 		ft_lstclear(&p->cmds, free_content);
 	return (p);

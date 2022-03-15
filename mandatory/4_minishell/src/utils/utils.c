@@ -14,7 +14,7 @@
 
 int	ft_strchars_i(char *str, char *set)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (*(str + i))

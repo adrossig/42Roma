@@ -14,10 +14,10 @@
 
 int	env(char *av, char **env, int i[2])
 {
-	int pos;
+	int	pos;
 
 	i[1] = 0;
-	pos = ft_strchr_index(av, '=');\
+	pos = ft_strchr_index(av, '=');
 	if (pos == -1)
 		return (-1);
 	while (env[i[1]])

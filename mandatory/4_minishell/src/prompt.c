@@ -12,9 +12,9 @@
 
 #include "../includes/minishell.h"
 
-extern int g_status;
+extern int	g_status;
 
-static char *get_home(t_prompt prompt)
+static char	*get_home(t_prompt prompt)
 {
 	char	*temp;
 	char	*pwd;
@@ -39,11 +39,12 @@ static char *get_home(t_prompt prompt)
 	free(home);
 	return (pwd);
 }
-static char *get_user(t_prompt prompt)
+
+static char	*get_user(t_prompt prompt)
 {
-	char **user;
-	char *tmp1;
-	char *tmp2;
+	char	**user;
+	char	*tmp1;
+	char	*tmp2;
 
 	user = NULL;
 	tmp2 = NULL;
@@ -68,11 +69,11 @@ static char *get_user(t_prompt prompt)
 	return (tmp1);
 }
 
-char *get_prompt(t_prompt prompt)
+char	*get_prompt(t_prompt prompt)
 {
-	char *tmp1;
-	char *tmp2;
-	char *aux;
+	char	*tmp1;
+	char	*tmp2;
+	char	*aux;
 
 	tmp1 = get_user(prompt);
 	tmp2 = ft_strjoin(tmp1, "@minishell");

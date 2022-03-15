@@ -12,7 +12,7 @@
 
 #include "../includes/minishell.h"
 
-extern int g_status;
+extern int	g_status;
 
 static void	*child_redir(t_list *cmd, int fd[2])
 {

@@ -12,7 +12,7 @@
 
 #include "../../includes/minishell.h"
 
-extern int g_status;
+extern int	g_status;
 
 int	get_fd(int oldfd, char *path, int flags[2])
 {
@@ -83,7 +83,7 @@ t_mini	*get_outfile1(t_mini *node, char **args, int *i)
  * @param i The index of the argument.
  *
  * @returns The output file for the shell.
- */
+**/
 t_mini	*get_outfile2(t_mini *node, char **args, int *i)
 {
 	char	*nl;
@@ -118,7 +118,7 @@ t_mini	*get_outfile2(t_mini *node, char **args, int *i)
  * @param i The index of the argument passed to the shell.
  *
  * @returns The input file descriptor for the shell.
- */
+**/
 t_mini	*get_infile1(t_mini *node, char **args, int *i)
 {
 	char	*nl;
@@ -153,7 +153,7 @@ t_mini	*get_infile1(t_mini *node, char **args, int *i)
  * @param i The index.
  *
  * @returns The input file.
- */
+**/
 t_mini	*get_infile2(t_mini *node, char **args, int *i)
 {
 	char	*aux[2];

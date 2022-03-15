@@ -18,8 +18,9 @@
  * @param str1 The first string.
  * @param str2 The second string.
  *
- * @returns 0 if the strings are equal, -1 if str1 is less than str2, 1 if str1 is greater than str2.
- */
+ * @returns 0 if the strings are equal, -1 if str1 is less than str2,
+ * 1 if str1 is greater than str2.
+**/
 int	ft_strcmp(const char *str1, const char *str2)
 {
 	unsigned int	i;

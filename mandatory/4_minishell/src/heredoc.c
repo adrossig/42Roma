@@ -12,11 +12,11 @@
 
 #include "../includes/minishell.h"
 
-extern int g_status;
+extern int	g_status;
 
-char *get_hdc_str(char *str[2], size_t len, char *limit, char *warn)
+char	*get_hdc_str(char *str[2], size_t len, char *limit, char *warn)
 {
-	char *tmp;
+	char	*tmp;
 
 	g_status = 0;
 	while (g_status != 130 && (!str[0] || ft_strncmp(str[0], limit, len) \
@@ -30,7 +30,7 @@ char *get_hdc_str(char *str[2], size_t len, char *limit, char *warn)
 		if (!str[0])
 		{
 			printf("%s (wanted `%s\')\n", warn, limit);
-			break;
+			break ;
 		}
 		tmp = str[0];
 		str[0] = ft_strjoin(str[0], "\n");
@@ -41,9 +41,9 @@ char *get_hdc_str(char *str[2], size_t len, char *limit, char *warn)
 	return (str[1]);
 }
 
-int get_hdc(char *str[2], char *aux[2])
+int	get_hdc(char *str[2], char *aux[2])
 {
-	int fd[2];
+	int	fd[2];
 
 	if (pipe(fd) == -1)
 	{

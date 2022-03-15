@@ -18,7 +18,8 @@
  * @param dict The dictionary to get the element from.
  * @param index The index of the element to get.
  *
- * @returns The element at the given index, or NULL if the index is out of bounds.
+ * @returns The element at the given index, or 
+ * NULL if the index is out of bounds.
  */
 void	*ft_get_element_index(t_dictionary *dict, int index)
 {

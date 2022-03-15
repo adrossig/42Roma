@@ -18,7 +18,8 @@
  * @param dict The dictionary to search.
  * @param string The string to search for.
  *
- * @returns The element label for the string, or NULL if the string is not in the dictionary.
+ * @returns The element label for the string, or 
+ * NULL if the string is not in the dictionary.
  */
 void	*ft_get_element_label(t_dictionary *dict, char *string)
 {

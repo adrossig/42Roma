@@ -19,7 +19,8 @@
  * @param i The index to insert at.
  * @param item The item to insert.
  *
- * @returns OK if the item was inserted, KO if the vector was NULL or the index was out of bounds.
+ * @returns OK if the item was inserted, KO if the vector was NULL 
+ * or the index was out of bounds.
  */
 int	ft_vector_insert(t_vector *vector, size_t i, void *item)
 {
