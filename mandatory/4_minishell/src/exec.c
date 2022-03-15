@@ -6,7 +6,7 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 10:11:35 by arossign          #+#    #+#             */
-/*   Updated: 2022/03/14 10:12:42 by arossign         ###   ########.fr       */
+/*   Updated: 2022/03/15 09:49:07 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,17 @@ static void	*child_redir(t_list *cmd, int fd[2])
 	if (node->infile != STDIN_FILENO)
 	{
 		if (dup2(node->infile, STDIN_FILENO) == -1)
-			return (mini_perror(DUPERR, NULL, 1));
+			return (error(DUPERR, NULL, 1));
 		close(node->infile);
 	}
 	if (node->outfile != STDOUT_FILENO)
 	{
 		if (dup2(node->outfile, STDOUT_FILENO) == -1)
-			return (mini_perror(DUPERR, NULL, 1));
+			return (error(DUPERR, NULL, 1));
 		close(node->outfile);
 	}
 	else if (cmd->next && dup2(fd[WRITE_END], STDOUT_FILENO) == -1)
-		return (mini_perror(DUPERR, NULL, 1));
+		return (error(DUPERR, NULL, 1));
 	close(fd[WRITE_END]);
 	return ("");
 }
@@ -62,13 +62,13 @@ void	exec_fork(t_prompt *prompt, t_list *cmd, int fd[2])
 	{
 		close(fd[READ_END]);
 		close(fd[WRITE_END]);
-		mini_perror(FORKERR, NULL, 1);
+		error(FORKERR, NULL, 1);
 	}
 	else if (!pid)
 		child_process(prompt, cmd, fd);
 }
 
-void	*check_to_fork(t_prompt *prompt, t_list *cmd, int fd[2])
+void	*check_fork(t_prompt *prompt, t_list *cmd, int fd[2])
 {
 	t_mini	*n;
 	DIR		*dir;

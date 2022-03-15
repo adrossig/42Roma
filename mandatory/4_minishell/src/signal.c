@@ -6,13 +6,13 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 10:18:29 by arossign          #+#    #+#             */
-/*   Updated: 2022/03/14 10:57:19 by arossign         ###   ########.fr       */
+/*   Updated: 2022/03/15 09:49:36 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
-extern int	g_status;
+int	g_status;
 
 void	handle_sigint(int sig)
 {

@@ -6,7 +6,7 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 16:41:03 by arossign          #+#    #+#             */
-/*   Updated: 2022/03/14 10:55:53 by arossign         ###   ########.fr       */
+/*   Updated: 2022/03/15 09:46:42 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static char *get_user(t_prompt prompt)
 	return (tmp1);
 }
 
-char *get_promt(t_prompt prompt)
+char *get_prompt(t_prompt prompt)
 {
 	char *tmp1;
 	char *tmp2;

@@ -38,7 +38,7 @@ BUILTIN := builtins/buitlins.c builtins/cd.c builtins/echo.c builtins/pwd.c \
 			getters/get_cmd.c getters/get_params.c \
 			utils/my_subsplit.c utils/my_trim.c utils/utils.c utils/ft_atoi2.c \
 			cmd_trim.c custom_cmd.c error.c expander.c heredoc.c main.c \
-			nodes.c parse.c prompt.c signal.c
+			nodes.c parse.c prompt.c signal.c exec.c
 
 # %.o file names
 NAMES := $(addprefix src/, $(BUILTIN))
