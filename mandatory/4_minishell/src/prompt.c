@@ -6,7 +6,7 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 16:41:03 by arossign          #+#    #+#             */
-/*   Updated: 2022/03/15 09:46:42 by arossign         ###   ########.fr       */
+/*   Updated: 2022/03/15 15:14:05 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ static char	*get_home(t_prompt prompt)
 	char	*home;
 
 	pwd = getcwd(NULL, 0);
+	if (!pwd)
+		pwd = ft_strdup("ø ");
 	home = minishell_getenv("HOME", prompt.env, 4);
 	if (home && home[0] && ft_strnstr(pwd, home, ft_strlen(pwd)))
 	{

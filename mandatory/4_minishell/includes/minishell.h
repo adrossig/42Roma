@@ -6,7 +6,7 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 14:55:54 by arossign          #+#    #+#             */
-/*   Updated: 2022/03/15 09:46:36 by arossign         ###   ########.fr       */
+/*   Updated: 2022/03/15 15:10:38 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ int		minishell_unset(t_prompt *prompt);
 int		minishell_exit(t_list *cmd, int *is_exit);
 
 /* Checks for errors and returns whether first arg is a directory */
-DIR		*cd_error(char **str[2]);
+void	*cd_error(char **str[2]);
 
 /* Handles all builtin functions */
 int		builtin(t_prompt *prompt, t_list *cmd, int *is_exit, int n);
