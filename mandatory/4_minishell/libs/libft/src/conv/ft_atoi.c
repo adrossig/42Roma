@@ -6,7 +6,7 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 14:52:40 by adrossig          #+#    #+#             */
-/*   Updated: 2022/02/11 22:57:06 by arossign         ###   ########.fr       */
+/*   Updated: 2022/03/16 16:27:34 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,9 @@ static int	ft_isdig(int c)
  */
 int	ft_atoi(const char *str)
 {
-	int			i;
 	long long	nat;
 	int			ichara;
 
-	i = 0;
 	nat = 0;
 	ichara = 1;
 	while (ft_isspc(*(str)))

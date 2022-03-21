@@ -6,7 +6,7 @@
 /*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 14:58:43 by arossign          #+#    #+#             */
-/*   Updated: 2022/03/15 15:25:18 by arossign         ###   ########.fr       */
+/*   Updated: 2022/03/16 16:30:53 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,7 @@ void	*cd_error(char **str[2])
 		error(NOT_DIR, str[0][1], 1);
 	if (str[0][1] && dir)
 		closedir(dir);
+	return (NULL);
 }
 
 void	free_content(void *content)
