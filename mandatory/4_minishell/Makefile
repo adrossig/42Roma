@@ -32,7 +32,6 @@ LOGDIR := log
 LIBDIR := libs
 TESTDIR := test
 
-
 # Source code file extension
 BUILTIN := builtins/buitlins.c builtins/cd.c builtins/echo.c builtins/pwd.c \
 			env/env.c env/export.c env/getenv.c env/setenv.c env/unset.c \
@@ -69,7 +68,7 @@ all: $(NAME)
 
 $(NAME): $(LIBFT_PATH) $(OBJECTS)
 	@echo -en "$(BROWN) $(END_COLOR)";
-	$(CC) $(OBJECTS) $(DEBUG) $(CFLAGS) $(LIBS) $(LDFLAGS) -lreadline $(RLFLAGS``) -o $@
+	$(CC) $(OBJECTS) $(DEBUG) $(CFLAGS) $(LIBS) $(LDFLAGS) -lreadline $(RLFLAGS) -o $@
 
 $(LIBFT_PATH):
 	@make -C $(LIBFT)
@@ -88,10 +87,18 @@ valgrind:
 # Rule for cleaning the project
 clean:
 	@echo "Deleting all the binaries files..."
+	@make clean -C $(LIBFT)
 	@rm -rvf $(OBJECTS)
-	@rm -rvf *.d
+	@rm -rvf src/*.d
+	@rm -rvf src/builtins/*.d
+	@rm -rvf src/env/*.d
+	@rm -rvf src/getters/*.d
+	@rm -rvf src/utils/*.d
 
 # Rule for cleaning the project
 fclean: clean
 	@echo "Deleting the executable files..."
-	@rm -rvf $(NAME);
+	@make fclean -C $(LIBFT)
+	@rm -rvf $(NAME)
+
+re: fclean all
