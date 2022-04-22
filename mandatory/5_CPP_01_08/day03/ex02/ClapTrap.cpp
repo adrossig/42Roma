@@ -88,14 +88,14 @@ void ClapTrap::attack(std::string const &target)
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	this->_hitPoints -= amount;
-	std::cout << "[ DAMAGE ]: Claptrap \"" << this->getName() << "\" takes damage,"
+	std::cout << "[ REPAIRE ]: Claptrap \"" << this->getName() << "\" takes damage,"
 			  << " remaining Hit Points : " << this->getHitPoints() << " !" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
 	this->_hitPoints += amount;
-	std::cout << "[ REPAIRE ]: Claptrap \"" << this->getName() << "\" gets repaired,"
+	std::cout << "[ DAMAGE ]: Claptrap \"" << this->getName() << "\" gets repaired,"
 			  << " remaining Hit Points : " << this->getHitPoints() << " !" << std::endl;
 }
 

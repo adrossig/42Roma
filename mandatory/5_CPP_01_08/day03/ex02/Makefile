@@ -1,7 +1,9 @@
 NAME		=	Trap
 
 SRCS		=	./main.cpp\
-				./ClapTrap.cpp
+				./ClapTrap.cpp\
+				./ScavTrap.cpp\
+				./FragTrap.cpp
 
 CXX			=	clang++
 RM			=	rm -rf
