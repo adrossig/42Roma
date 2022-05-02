@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 15:34:39 by adrossig          #+#    #+#             */
-/*   Updated: 2021/02/05 23:49:33 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/04/28 13:16:59 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@
 
 void	ft_putstr(const char *str)
 {
-	if (str != NULL)
-		write(1, str, ft_strlen(str));
+	int i;
+
+	i = 0;
+	while(str[i])
+		i++;
+	write(1, str, i);
 }
