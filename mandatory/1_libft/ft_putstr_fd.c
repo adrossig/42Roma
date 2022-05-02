@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrossig <adrossig@students.42.fr>         +#+  +:+       +#+        */
+/*   By: arossign <arossign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 15:34:21 by adrossig          #+#    #+#             */
-/*   Updated: 2021/10/28 11:51:17 by adrossig         ###   ########.fr       */
+/*   Updated: 2022/04/28 13:15:54 by arossign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ static size_t	fstrlen(const char *str)
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if (!s)
-		return ;
-	write(fd, s, fstrlen(s));
+	int i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	write(fd, s, i);
 }
