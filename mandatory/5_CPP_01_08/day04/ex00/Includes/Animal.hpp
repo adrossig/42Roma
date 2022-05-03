@@ -3,18 +3,18 @@
 # include <iostream>
 
 class Animal {
-    public:
-        Animal(void);
-        Animal(Animal const& cpy);
-        virtual ~Animal(void);
+	public:
+		Animal(void);
+		Animal(Animal const& cpy);
+		virtual ~Animal(void);
 
-        Animal&         operator=(Animal const& op);
-        void            setType(std::string type);
-        std::string     getType(void) const;
-        virtual void    makeSound(void) const;
+		Animal&			operator=(Animal const& op);
+		void			setType(std::string type);
+		std::string		getType(void) const;
+		virtual void	makeSound(void) const;
 
-    protected:
-        std::string     _type;
+	protected:
+		std::string	_type;
 };
 
 #endif

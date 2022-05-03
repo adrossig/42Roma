@@ -3,17 +3,17 @@
 # include <iostream>
 
 class Brain {
-    public:
-        Brain(void);
-        Brain(Brain const& cpy);
-        ~Brain(void);
+	public:
+		Brain(void);
+		Brain(Brain const& cpy);
+		~Brain(void);
 
-        Brain&  operator=(Brain const& op);
-        void    setIdeas(std::string ideas, int idx);
-        void    viewIdeas(void) const;
+		Brain&	operator=(Brain const& op);
+		void	setIdeas(std::string ideas, int idx);
+		void	viewIdeas(void) const;
 
-    private:
-        std::string _ideas[100];
+	private:
+		std::string	_ideas[100];
 };
 
 #endif
