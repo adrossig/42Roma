@@ -1,0 +1,24 @@
+#include "mutantstack.hpp"
+
+int main(void)
+{
+	MutantStack<int>	mstack;
+	int					elem[] = { 42, 23, 12, 18 };
+
+	for (int idx = 0; idx < 4; idx += 1)
+		mstack.push(elem[idx]);
+	std::cout << "-> Stack size is of " << mstack.size() << std::endl;
+	std::cout << "-> Stack is empty : ";
+	if (mstack.empty())
+		std::cout << "true" << std::endl;
+	else
+		std::cout << "false" << std::endl;
+	std::cout << "-> Stack elements (iterator) :";
+	MutantStack<int>::iterator 	it = mstack.begin();
+	MutantStack<int>::iterator 	ite = mstack.end();
+	while (it != ite) {
+		std::cout << " " << *it;
+		it += 1;
+	}
+	return (0);
+}
