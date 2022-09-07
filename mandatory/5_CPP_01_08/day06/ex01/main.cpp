@@ -1,7 +1,7 @@
 #include "Seralize.hpp"
 
 int		main(void) {
-	Data*		data = initData("Melody", "BOY");
+	Data*		data = initData("Jean", "PIERRE");
 	uintptr_t 	testSeralize = 0;
 	Data*		testDeseralize = NULL;
 

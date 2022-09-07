@@ -2,9 +2,6 @@
 
 Practice is nothing without theory.
 
-## School Badge
-[![adrossig's 42 stats](https://badge42.herokuapp.com/api/stats/arossign)](https://github.com/adrossig/badge42)
-
 ## Common Circle
 | Circle | Project | Language | Topics | Date of Completion | Result |
 |:---:|:---|:---:|:---|:---:|:---:|
