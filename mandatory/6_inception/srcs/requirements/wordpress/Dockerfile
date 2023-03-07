@@ -17,3 +17,5 @@ RUN chmod +x /tmp/config.sh
 ENTRYPOINT [ "/usr/bin/dumb-init", "--" ]
 
 CMD [ "sh", "-c", "/tmp/config.sh" ]
+EXPOSE 3306 9000
+

@@ -1,11 +1,14 @@
-FROM debian:buster
+FROM    debian:buster
 
-RUN apt update && apt upgrade -y
-RUN apt-get install mariadb-server -y
+RUN     apt-get update && apt-get upgrade
+RUN     apt-get -y install mariadb-server
 
-COPY conf/50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
-COPY tools/config.sh /config.sh
+RUN     mkdir -p /var/run/mysqld && mkdir -p /run/mysqld
+RUN     chown -R mysql:root /run/mysqld && chown -R mysql:root /var/run/mysqld
 
-ENTRYPOINT [ "bash", "config.sh" ]
+COPY    tools/config.sh /
+COPY	conf/50-server.cnf	/etc/mysql/mariadb.conf.d/50-server.cnf
 
 EXPOSE 3306
+
+ENTRYPOINT  ["sh", "config.sh"]
